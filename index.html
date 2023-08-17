@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS     <h3>蔣家小館</h3>
+    <p>蔣家小館</p>-->
+
+    <title>蔣家小館</title>
+    <link rel="stylesheet" href="word.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+      body {
+      font-family: 'GenWanMin' ;
+    }
+    </style>
+  </head>
+  <body>
+    <h3>蔣家小館</h3>
+
+    <script>
+      var cards = [
+        { title: 'Mountain View', copy: 'Check out all of these gorgeous mountain trips with beautiful views of, you guessed it, the mountains', button: 'View Trips' },
+        { title: 'To The Beach', copy: 'Plan your next beach trip with these fabulous destinations', button: 'View Trips' }
+      ];
+
+      function card(title, copy, button) {
+        return `
+        <div class="card">
+          <div class="content">
+            <h2 class="title">${title}</h2>
+            <p class="copy">${copy}</p>
+            <button class="btn">${button}</button>
+          </div>
+        </div>
+        `;
+      }
+
+      var pageContent = document.querySelector('.page-content');
+      cards.forEach(function(cardData) {
+        pageContent.innerHTML += card(cardData.title, cardData.copy, cardData.button);
+      });
+    </script>
+  </body>
+</html>

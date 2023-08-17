@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <title>主頁面</title>
+    <link rel="stylesheet" href="word.css">
+    <style>
+        body {
+            font-family: 'GenWanMin';
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 標題列 */
+        .navbar {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            /* 添加左右兩側的間距 */
+        }
+
+        .navbar div:not(:first-child) {
+            flex-grow: 1;
+            /* 其他元素均勻分布 */
+            display: flex;
+            justify-content: space-between;
+            /* 水平間距均勻分布 */
+        }
+
+        .navbar a {
+            margin: 0 10px;
+            /* 每個元素之間的間距 */
+        }
+
+        /*標題區域 */
+
+        .title_area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 280px;
+
+        }
+
+        .title_area_left {
+            padding: 20px;
+        }
+
+        .title_area_right {}
+
+
+        .title_area_left p:nth-child(1) {
+            color: #4e4545;
+            font-size: 42px;
+        }
+
+        .title_area_left p:nth-child(2) {
+            color: #4e4545;
+            font-size: 28px;
+        }
+
+
+        /*內容區域 */
+
+        .contect_area {
+            padding-top: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            display: flex;
+            /* 這行已存在 */
+            justify-content: center;
+            /* 這行已存在 */
+            align-items: center;
+            /* 添加這一行 */
+            height: auto;
+        }
+
+        .contect_area p {
+            color: #4e4545;
+        }
+
+        .contect_area h1 {
+            color: #4e4545;
+        }
+
+        .contect_area h2 {
+            color: #4e4545;
+        }
+
+        .contect_area h3 {
+            color: #4e4545;
+        }
+
+        .contect_area h4 {
+            color: #4e4545;
+        }
+
+        .contect_area_left {
+            margin-top: 0;
+            /* Ensure the top margin is 0 */
+            width: 35%;
+        }
+
+        .contect_area_right {
+            margin-top: 0;
+            /* Ensure the top margin is 0 */
+            width: 35%;
+        }
+
+
+        .contact_space {
+            padding: 10px;
+        }
+
+        /*產品小框 */
+        .product {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            /* 添加这行来确保所有子元素从顶部开始对齐 */
+            height: 150px;
+
+        }
+
+        .product_num {
+            flex: 1;
+            padding: 10px;
+        }
+
+
+
+        .product_info {
+            flex: 8;
+            padding: 10px;
+            width: 150PX;
+            word-wrap: break-word;
+            /* 確保內容換行 */
+        }
+
+        .product_lead {
+            flex: 1;
+            padding: 10px;
+            align-self: center;
+            margin-left: auto;
+        }
+
+        .product_line {
+            border: 1px solid #4e4545;
+            height: 0;
+            width: auto;
+        }
+
+        .product_das {
+            border: 1px dashed #4e4545;
+            height: 0;
+            width: auto;
+        }
+
+        /*延伸區域*/
+        .tomore_area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 280px;
+        }
+
+        .tomore_area_left {}
+
+        .tomore_area_right {}
+
+        .tomore_space {
+            padding: 10px;
+        }
+
+        .tomore_line {
+            padding: 10px 0;
+            /* 上下的間距，水平不添加間距 */
+            width: 2px;
+            /* 定義分割線的寬度 */
+            height: 60%;
+            /* 或您希望的高度值 */
+            background-color: #4e4545;
+            /* 分割線的顏色 */
+            display: inline-block;
+            /* 讓 div 垂直對齊並不繼承整個水平空間 */
+        }
+
+        /*底部區域*/
+        .botton_area {}
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+        }
+
+        footer {
+            background-color: #a2b2a6;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-info {
+            padding: 10px;
+        }
+
+
+
+        .logo {
+            padding: 20px;
+        }
+
+        /*雜七雜八*/
+        .title {
+            margin-left: 35px;
+        }
+
+        .content p {
+            color: #4e4545;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 導覽列-->
+    <div class="navbar">
+        <img src="logo.png" alt="LOGO" style="width: 100px; height: auto;">
+        <div class="title">
+            <a href="about_us.html">關於我們</a>
+            <a href="#">近期課表</a>
+            <a href="#">購買產品</a>
+            <a href="#">購買線上課程</a>
+            <a href="#">會員專區</a>
+        </div>
+        <div class="category">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+
+    <!-- 內容區域 -->
+    <div class="title_area">
+        <div class="title_area_left">
+            <p>關於我們</p>
+            <p>-蔣家小館</p>
+        </div>
+        <div class="title_area_right">
+            <img src="about_us.jpg" alt="about_us" style="width: 500px; height: auto;">
+        </div>
+    </div>
+
+    <div class="contect_area">
+        <div class="contect_area_left">
+            <p>我們相信最真實的好處來自互利，
+                <br><br>
+                彼此感恩互助可以成就長遠的美好關係。
+                <br><br><br>
+                里仁以通路角色出發，
+                <br><br>
+                想要實現的卻是一個人與人、土地與土地，
+                <br><br>
+                所有事物之間都健康和樂的社會理想。
+                <br><br><br>
+                因此，我們拉著所有人的手一起前行，
+                <br><br>
+                守護土地與健康的使命沒有終點。
+                <br><br><br>
+                一個人的力量有限。
+                <br><br>
+                但一群人的力量就可以翻轉世界。
+            </p>
+        </div>
+        <div class="contact_space"></div>
+        <div class="contect_area_right">
+
+            <h1>主推產品</h1>
+            <div class="product_line"></div>
+
+            <!-- 產品區塊 -->
+            <div class="product">
+                <div class="product_num">
+                    <h2>01</h2>
+                </div>
+                <div class="product_info">
+                    <h3>qqqqqqqq</h3>
+                    <h4>qwertasfg</h4>
+                    <p>qwertasfg</p>
+                </div>
+                <div class="product_lead">
+                    <img src="link.png" alt="link" style="width: 30px; height: auto;">
+                </div>
+            </div>
+            <div class="product_das"></div>
+            <!-- 產品區塊 -->
+            <div class="product">
+                <div class="product_num">
+                    <h2>02</h2>
+                </div>
+                <div class="product_info">
+                    <h3>qqqqqqqq</h3>
+                    <h4>qwertasfg</h4>
+                    <p>qwertasfg</p>
+                </div>
+                <div class="product_lead">
+                    <img src="link.png" alt="link" style="width: 30px; height: auto;">
+                </div>
+            </div>
+            <div class="product_das"></div>
+            <!-- 產品區塊 -->
+            <div class="product">
+                <div class="product_num">
+                    <h2>03</h2>
+                </div>
+                <div class="product_info">
+                    <h3>qqqqqqqq</h3>
+                    <h4>qwertasfg</h4>
+                    <p>qwertasfgqwertasfgqwertasfgqwertasfgqwertasfg</p>
+                </div>
+                <div class="product_lead">
+                    <img src="link.png" alt="link" style="width: 30px; height: auto;">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="tomore_area">
+        <div class="tomore_area_left">
+            <p>qqqqqqqq</p>
+        </div>
+        <div class="tomore_space"> </div>
+        <div class="tomore_line"> </div>
+        <div class="tomore_space">
+        </div>
+        <div class="tomore_area_right">
+            <p>PPPP</p>
+        </div>
+    </div>
+
+
+
+
+    <!-- 底部 -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">
+                <img src="logo.png" alt="LOGO" style="width: 100px; height: auto;">
+            </div>
+            <div class="contact-info">
+                <p>地址</p>
+                <p>TEL</p>
+                <p>FB</p>
+                <p>LINE</p>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

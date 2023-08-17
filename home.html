@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <title>主頁面</title>
+  <link rel="stylesheet" href="word.css">
+  <style>
+    * {
+    box-sizing: border-box; /* 確保所有元素的邊框和內距都包括在元素的總寬度和高度中 */
+}
+    body {
+      font-family: 'GenWanMin';
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .title_area {
+    display: flex;
+    justify-content: center;  /* 這將在水平方向上居中子元素 */
+    align-items: center;      /* 這將在垂直方向上居中子元素 */
+    width: 100%;
+    margin: auto;
+}
+
+
+.title_area_left {
+    padding: 50px; /* 添加內部間距 */
+    width:40; 
+    margin-right: 20px;
+}
+
+.title_area img {
+    align-self: flex-end;
+    margin-left: 20px;
+}
+.title_area_left p:nth-child(2) {
+    font-size: 16px; /* 你可以根據需求調整這個值 */
+}
+    .content_area {
+
+    }
+    .tomore_area {
+
+    }
+    .navbar {
+      height: 100px;
+      display: flex;
+      align-items: center; /* 將元素垂直置中對齊 */
+      padding: 0 20px; /* 添加左右兩側的間距 */
+    }
+
+    .navbar div:not(:first-child) {
+      flex-grow: 1; /* 其他元素均勻分布 */
+      display: flex;
+      justify-content: space-between; /* 水平間距均勻分布 */
+    }
+    .title {
+  margin-left: 35px;
+}
+
+    .navbar a {
+      margin: 0 10px; /* 每個元素之間的間距 */
+    }
+    footer {
+  background-color: #a2b2a6;
+  padding: 0; /* 移除底部的 padding */
+  margin: 0; /* 移除底部的 margin */
+}
+.contact-info{
+    padding: 10px;
+}
+.footer-content {
+  display: flex;
+  align-items: center; /* 垂直置中對齊元素 */
+}
+.logo{
+    padding: 20px;
+}
+.content p{
+  color: #4e4545;
+  font-size: 30px;
+}
+  </style>
+</head>
+<body>
+  <!-- 導覽列 標頭列-->
+  
+  <div class="navbar">
+    <img src="logo.png" alt="LOGO" style="width: 100px; height: auto;">
+    <div class="title">
+      <a href="about_us.html">關於我們</a>
+      <a href="#">近期課表</a>
+      <a href="#">購買產品</a>
+      <a href="#">購買線上課程</a>
+      <a href="#">會員專區</a>
+    </div>
+    <div class="category">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </div>
+  
+  <!-- 內容區域 -->
+<div class="content">
+
+  <div class="title_area">
+
+    <div class="title_area_left">
+      <p>關於我們</p>
+      <p>-蔣家小館</p>
+    </div>
+
+    <img src="about_us.jpg" alt="about_us" style="width: 500px; height: auto;">
+    
+  </div>
+  <div class="content_area">
+
+  </div>
+  <div class="tomore_area">
+    
+  </div>
+  
+
+
+</div>
+  <!-- 底部 -->
+  <footer>
+    <div class="footer-content">
+      <div class="logo">
+        <img src="logo.png" alt="LOGO" style="width: 100px; height: auto;">
+      </div>
+      <div class="contact-info">
+        <p>地址</p>
+        <p>TEL</p>
+        <p>FB</p>
+        <p>LINE</p>
+      </div>
+    </div>
+  </footer>
+  
+  
+</body>
+</html>
