@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <title>主頁面</title>
+    <title>查看課程</title>
     <link rel="stylesheet" href="word.css">
     <style>
         body {
@@ -83,123 +83,79 @@
             /* 這裡設定的是 5px，但你可以根據需要進行調整 */
         }
 
+        .title a img {
+            height: 1em;
+            /* 1em 通常相當於該元素的字體大小 */
+            width: auto;
+        }
 
-        /*內容區域 */
-
-        .contect_area {
+        /* 課表區域 */
+        .monthy {
+            display: flex;
+            justify-content: space-between;
+            /* 將元素均匀分布在容器中 */
+            align-items: center;
+            width: 90%;
+            /* 設定容器寬度，也影響了間距 */
+            margin: 0 auto;
+            /* 讓容器在其父元素中水平置中 */
             padding-top: 20px;
-            padding-left: 10px;
-            padding-right: 10px;
-            display: flex;
-            /* 這行已存在 */
-            justify-content: center;
-            /* 這行已存在 */
-            align-items: center;
-            /* 添加這一行 */
-            height: auto;
         }
 
-        .contect_area h1,
-        .contect_area h2,
-        .contect_area h3,
-        .contect_area h4,
-        .contect_area p {
-            color: #4e4545;
-            margin-top: 10px;
-            /* 這裡的 5px 是示例值，你可以根據需要調整 */
-            margin-bottom: 10px;
-            /* 這裡的 5px 是示例值，你可以根據需要調整 */
-        }
-
-        .contect_area_left {
-            margin-top: 0;
-            /* Ensure the top margin is 0 */
-            width: 35%;
-        }
-
-        .contect_area_right {
-            margin-top: 0;
-            /* Ensure the top margin is 0 */
-            width: 50%;
-        }
-
-
-        .contact_space {
-            padding: 10px;
-        }
-
-        /*產品小框 */
-        .product {
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            /* 添加这行来确保所有子元素从顶部开始对齐 */
-            height: 200px;
-
-        }
-
-        .product_num {
+        .detail {
             flex: 1;
+            /* 使所有的detail元素有相同的flex-grow值，所以它們都會有相同的寬度 */
             padding: 10px;
+            /* 內部間距 */
+            box-sizing: border-box;
+            /* 使padding和border的值包括在元素的總寬度和高度內 */
+            transform: scale(0.9);
+            /* 縮小到原始大小的90% */
+            transition: transform 0.3s;
+            /* 為縮放效果添加過渡效果 */
         }
 
-
-
-        .product_info {
-            flex: 8;
-            padding: 10px;
-            width: 150PX;
-            word-wrap: break-word;
-            /* 確保內容換行 */
+        .detail:hover {
+            transform: scale(1);
+            /* 當鼠標懸停在元素上時，它會回到原始大小 */
         }
 
-        .product_lead {
-            flex: 1;
-            padding: 10px;
-            align-self: center;
-            margin-left: auto;
+        .detail img {
+            border-radius: 15px;
+            /* 圖片的圓角 */
         }
 
-        .product_line {
-            border: 1px solid #4e4545;
-            height: 0;
-            width: auto;
-        }
+ /* 教室區域 */
+.class_room {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* 這裡的高度可以根據您的需求調整 */
+    padding-left:15%; /* 左側留白 */
+    padding-right: 15%; /* 右側留白 */
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
 
-        .product_das {
-            border: 1px dashed #4e4545;
-            height: 0;
-            width: auto;
-        }
+.each {
+    display: flex;
+    align-items: center; /* 確保內容與圖片在同一水平線上 */
+}
 
-        /*延伸區域*/
-        .tomore_area {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 280px;
-        }
+.class_room_info {
+    margin-right: 20px; /* 在信息和圖片之間添加一些間距 */
+}
 
-        .tomore_area_left {
-            width: 35%;
-        }
+.class_room_info h2,
+.class_room_info h5,
+.class_room_info p,
+.class_room_info a {
+    margin-top: 5px; /* 調整上間距 */
+    margin-bottom: 5px; /* 調整下間距 */
+    color: #4E4545; /* 設定字體色號 */
+}
 
-        .tomore_area_right {
-            width: 35%;
-        }
 
-        .tomore_space {
-            padding: 10px;
-        }
-
-        .tomore_area h2,
-        .tomore_area p {
-            color: #4e4545;
-            margin-top: 10px;
-            /* 這裡的 5px 是示例值，你可以根據需要調整 */
-            margin-bottom: 10px;
-            /* 這裡的 5px 是示例值，你可以根據需要調整 */
-        }
         /*底部區域*/
         .botton_area {}
 
@@ -246,11 +202,10 @@
             /* 當滑鼠懸停時添加底線 */
         }
 
-        .title a img {
-            height: 1em;
-            /* 1em 通常相當於該元素的字體大小 */
-            width: auto;
-        }
+    h1,h2,h3,h4,h5,p {
+    color: #4E4545; /* 設定字體色號 */
+}
+
     </style>
 </head>
 
@@ -278,116 +233,81 @@
     <!-- 內容區域 -->
     <div class="title_area">
         <div class="title_area_left">
-            <p>關於我們</p>
-            <p>-蔣家小館</p>
+            <p>查看課程</p>
+            <p>-蔣夫人的巡迴教室</p>
         </div>
         <div class="title_area_right">
-            <img src="about_us.jpg" alt="about_us" style="width: 500px; height: auto;">
+            <img src="class.jpg" alt="about_us" style="width: 500px; height: 280px;">
         </div>
     </div>
 
-    <div class="contect_area">
-        <div class="contect_area_left">
-            <p>我們相信最真實的好處來自互利，
-                <br><br>
-                彼此感恩互助可以成就長遠的美好關係。
-                <br><br><br>
-                里仁以通路角色出發，
-                <br><br>
-                想要實現的卻是一個人與人、土地與土地，
-                <br><br>
-                所有事物之間都健康和樂的社會理想。
-                <br><br><br>
-                因此，我們拉著所有人的手一起前行，
-                <br><br>
-                守護土地與健康的使命沒有終點。
-                <br><br><br>
-                一個人的力量有限。
-                <br><br>
-                但一群人的力量就可以翻轉世界。
-            </p>
+    <div class="monthy">
+        <div class="detail">
+            <img src="class (1).jpg" alt="about_us" style="width: 180px; height: 180px;">
+            <h5>2023/8/2 台南布布教室</h5>
+            <h3>純素醬料</h3>
+            <p>用炒鍋、攪拌機或料理機來製作暖胃養生素醬料(送禮自用販售皆宜)，運用米麴、鹽麴、甘糀入醬，讓口感與營養更升級。</p>
         </div>
-        <div class="contact_space"></div>
-        <div class="contect_area_right">
-
-            <h1>主推產品</h1>
-            <div class="product_line"></div>
-
-            <!-- 產品區塊 -->
-            <div class="product">
-                <div class="product_num">
-                    <h2>01</h2>
-                </div>
-                <div class="product_info">
-                    <h3>米麴</h3>
-                    <h4>選用無農藥&檢驗合格米（保留外膜）+ 日本國菌
-                    </h4>
-                    <p>將米麴外層有長菌絲的部份（佔約7成）磨成粉，
-                        菌絲含各種酵素與營養質。
-                        優質米麴能製作出更美味與更營養的發酵好物</p>
-                </div>
-                <div class="product_lead">
-                    <img src="link.png" alt="link" style="width: 30px; height: auto;">
-                </div>
-            </div>
-            <div class="product_das"></div>
-            <!-- 產品區塊 -->
-            <div class="product">
-                <div class="product_num">
-                    <h2>02</h2>
-                </div>
-                <div class="product_info">
-                    <h3>米麴（粒狀）</h3>
-                    <h4>選用無農藥&檢驗合格米 + 日本國菌</h4>
-                    <p>米麴是使用磨得沒有很精白的無農藥白米
-                        (有多些膳食纖維&營養質)
-                        米麴是製作甘糀、鹽麴、纖穀釀 、味噌、醬油、
-                        醬油麴、豆腐乳...等，最重要的元素。</p>
-                </div>
-                <div class="product_lead">
-                    <img src="link.png" alt="link" style="width: 30px; height: auto;">
-                </div>
-            </div>
-            <div class="product_das"></div>
-            <!-- 產品區塊 -->
-            <div class="product">
-                <div class="product_num">
-                    <h2>03</h2>
-                </div>
-                <div class="product_info">
-                    <h3>紅麴粉</h3>
-                    <h4>白天吃白米麴粉，晚上吃紅麴粉</h4>
-                    <p>選用無農藥&檢驗合格米（保留外膜）+ 日本國菌
-                        紅麴粉是台灣製造、檢驗合格無橘黴素。</p>
-                </div>
-                <div class="product_lead">
-                    <img src="link.png" alt="link" style="width: 30px; height: auto;">
-                </div>
-            </div>
+        <div class="detail">
+            <img src="class (2).jpg" alt="about_us" style="width: 180px; height: 180px;">
+            <h5>2023/8/19 台北新光教室</h5>
+            <h3>味噌製作&葷素料理延伸</h3>
+            <p>這兩堂課我們來學高等級米麴昆布赤味噌的製作秘笈與延伸料理，調個百搭味噌常備醬，讓味噌在家中奠立不可動搖的地位。</p>
         </div>
-
-    </div>
-
-    <div class="tomore_area">
-        <div class="tomore_area_left">
-            <h2>報名課程</h2>
-            <p>查看蔣夫人的全台巡迴課程，選擇自己所喜歡的課程報名，把健康生活帶回家。</p>
-            <img src="link.png" alt="link" style="width: 30px; height: auto;">
-        </div>
-        <div class="tomore_space"> </div>
-        <div class="tomore_line"> </div>
-        <div class="tomore_space">
-        </div>
-        <div class="tomore_area_right">
-            <h2>逛逛商品</h2>
-            <p>沒有時間?場地不方便?那來逛逛我們的商場吧，我們提供直接宅配到家，或是店到店的商品寄送服務，更有線上課程提供忙碌的你選擇。</p>
-            <img src="link.png" alt="link" style="width: 30px; height: auto;">
+        <div class="detail">
+            <img src="class (3).jpg" alt="about_us" style="width: 180px; height: 180px;">
+            <h5>2023/8/24 屏東蔣家教室</h5>
+            <h3>活鹽麴甘糀纖穀釀</h3>
+            <p>這三堂課，我們來學習米麴發酵物的製作精髓與烹煮方法，運用電鍋、炒鍋、烤箱、美善品或果汁機來製作可口健康的料理。</p>
         </div>
     </div>
 
+<!-- 教室區域 -->
 
+<div class="class_room">
+    <div class="each">
+        <div class="class_room_info">
+        <h2>布布優格烘焙廚藝</h2>
+        <h5>台南市東區裕信路6號</h5>
+        <p>布布鮮奶優格菌粉 可以讓您在家輕鬆做出好吃的優格，製作方法非常簡單，不僅健康無添加物，也比市售優格經濟實惠，符合「好吃、簡單、便宜、安全、無添加」的優點。
+        </p>
+        <a href="https://www.facebook.com/bubuyogurt/"><img src="link.png" alt="link" style="width: 30px; height: auto;"></a>
+        </div>
+        <img src="cynthia's_classroom.jpg" alt="about_us" style="width: 180px; height: auto;">
 
+    </div>
+</div>
 
+<div class="class_room">
+    <div class="each">
+        <div class="class_room_info">
+        <h2>布布優格烘焙廚藝</h2>
+        <h5>台南市東區裕信路6號</h5>
+        <p>布布鮮奶優格菌粉 可以讓您在家輕鬆做出好吃的優格，製作方法非常簡單，不僅健康無添加物，也比市售優格經濟實惠，符合「好吃、簡單、便宜、安全、無添加」的優點。
+        </p>
+        <a href="https://www.facebook.com/bubuyogurt/"><img src="link.png" alt="link" style="width: 30px; height: auto;"></a>
+        </div>
+        <img src="ganesha_classroom.jpg" alt="about_us" style="width: 180px; height: auto;">
+
+    </div>
+</div>
+
+<div class="class_room">
+    <div class="each">
+        <div class="class_room_info">
+        <h2>布布優格烘焙廚藝</h2>
+        <h5>台南市東區裕信路6號</h5>
+        <p>布布鮮奶優格菌粉 可以讓您在家輕鬆做出好吃的優格，製作方法非常簡單，不僅健康無添加物，也比市售優格經濟實惠，符合「好吃、簡單、便宜、安全、無添加」的優點。
+        </p>
+        <a href="https://www.facebook.com/bubuyogurt/"><img src="link.png" alt="link" style="width: 30px; height: auto;"></a>
+        </div>
+        <img src="bubu_classroom.jpeg" alt="about_us" style="width: 180px; height: auto;">
+
+    </div>
+</div>
+
+<br>
+<br>
     <!-- 底部 -->
     <footer>
         <div class="footer-content">
