@@ -23,6 +23,7 @@
             display: flex;
             align-items: center;
             padding: 0 20px;
+
             /* 添加左右兩側的間距 */
         }
 
@@ -35,6 +36,7 @@
         }
 
         .navbar a {
+
             margin: 0 10px;
             /* 每個元素之間的間距 */
         }
@@ -51,9 +53,12 @@
 
         .title_area_left {
             padding: 20px;
+            margin-right: 15px;
         }
 
-        .title_area_right {}
+        .title_area_right {
+            margin-left: 15px;
+        }
 
 
         .title_area_left p:nth-child(1) {
@@ -64,6 +69,18 @@
         .title_area_left p:nth-child(2) {
             color: #4e4545;
             font-size: 28px;
+        }
+
+        .title_area_left p {
+            margin-top: 0;
+            /* 清除上邊距 */
+            margin-bottom: 5px;
+            /* 這裡設定的是 5px，但你可以根據需要進行調整 */
+        }
+
+        .title_area_left p:last-child {
+            margin-top: 5px;
+            /* 這裡設定的是 5px，但你可以根據需要進行調整 */
         }
 
 
@@ -82,24 +99,16 @@
             height: auto;
         }
 
+        .contect_area h1,
+        .contect_area h2,
+        .contect_area h3,
+        .contect_area h4,
         .contect_area p {
             color: #4e4545;
-        }
-
-        .contect_area h1 {
-            color: #4e4545;
-        }
-
-        .contect_area h2 {
-            color: #4e4545;
-        }
-
-        .contect_area h3 {
-            color: #4e4545;
-        }
-
-        .contect_area h4 {
-            color: #4e4545;
+            margin-top: 10px;
+            /* 這裡的 5px 是示例值，你可以根據需要調整 */
+            margin-bottom: 10px;
+            /* 這裡的 5px 是示例值，你可以根據需要調整 */
         }
 
         .contect_area_left {
@@ -111,7 +120,7 @@
         .contect_area_right {
             margin-top: 0;
             /* Ensure the top margin is 0 */
-            width: 35%;
+            width: 50%;
         }
 
 
@@ -125,7 +134,7 @@
             justify-content: flex-start;
             align-items: flex-start;
             /* 添加这行来确保所有子元素从顶部开始对齐 */
-            height: 150px;
+            height: 200px;
 
         }
 
@@ -171,27 +180,26 @@
             height: 280px;
         }
 
-        .tomore_area_left {}
+        .tomore_area_left {
+            width: 35%;
+        }
 
-        .tomore_area_right {}
+        .tomore_area_right {
+            width: 35%;
+        }
 
         .tomore_space {
             padding: 10px;
         }
 
-        .tomore_line {
-            padding: 10px 0;
-            /* 上下的間距，水平不添加間距 */
-            width: 2px;
-            /* 定義分割線的寬度 */
-            height: 60%;
-            /* 或您希望的高度值 */
-            background-color: #4e4545;
-            /* 分割線的顏色 */
-            display: inline-block;
-            /* 讓 div 垂直對齊並不繼承整個水平空間 */
+        .tomore_area h2,
+        .tomore_area p {
+            color: #4e4545;
+            margin-top: 10px;
+            /* 這裡的 5px 是示例值，你可以根據需要調整 */
+            margin-bottom: 10px;
+            /* 這裡的 5px 是示例值，你可以根據需要調整 */
         }
-
         /*底部區域*/
         .botton_area {}
 
@@ -225,6 +233,24 @@
             color: #4e4545;
             font-size: 30px;
         }
+
+        a {
+            text-decoration: none;
+            /* 去除底線 */
+            color: #4e4545;
+            /* 將文字顏色設為黑色 */
+        }
+
+        a:hover {
+            text-decoration: underline;
+            /* 當滑鼠懸停時添加底線 */
+        }
+
+        .title a img {
+            height: 1em;
+            /* 1em 通常相當於該元素的字體大小 */
+            width: auto;
+        }
     </style>
 </head>
 
@@ -233,11 +259,14 @@
     <div class="navbar">
         <img src="logo.png" alt="LOGO" style="width: 100px; height: auto;">
         <div class="title">
-            <a href="about_us.html">關於我們</a>
-            <a href="#">近期課表</a>
-            <a href="#">購買產品</a>
-            <a href="#">購買線上課程</a>
-            <a href="#">會員專區</a>
+            <a href="1_about_us.html">關於我們</a>
+            <a href="1_class.html">查看課程</a>
+            <a href="1_other.html">購買產品</a>
+            <a href="1_product.html">購買線上課程</a>
+            <a href="1_menber.html">會員專區</a>
+            <a href="1_cart.html">
+                <img src="shopping-cart.png" alt="Shopping Cart">
+            </a>
         </div>
         <div class="category">
             <div class="line"></div>
@@ -290,9 +319,12 @@
                     <h2>01</h2>
                 </div>
                 <div class="product_info">
-                    <h3>qqqqqqqq</h3>
-                    <h4>qwertasfg</h4>
-                    <p>qwertasfg</p>
+                    <h3>米麴</h3>
+                    <h4>選用無農藥&檢驗合格米（保留外膜）+ 日本國菌
+                    </h4>
+                    <p>將米麴外層有長菌絲的部份（佔約7成）磨成粉，
+                        菌絲含各種酵素與營養質。
+                        優質米麴能製作出更美味與更營養的發酵好物</p>
                 </div>
                 <div class="product_lead">
                     <img src="link.png" alt="link" style="width: 30px; height: auto;">
@@ -305,9 +337,12 @@
                     <h2>02</h2>
                 </div>
                 <div class="product_info">
-                    <h3>qqqqqqqq</h3>
-                    <h4>qwertasfg</h4>
-                    <p>qwertasfg</p>
+                    <h3>米麴（粒狀）</h3>
+                    <h4>選用無農藥&檢驗合格米 + 日本國菌</h4>
+                    <p>米麴是使用磨得沒有很精白的無農藥白米
+                        (有多些膳食纖維&營養質)
+                        米麴是製作甘糀、鹽麴、纖穀釀 、味噌、醬油、
+                        醬油麴、豆腐乳...等，最重要的元素。</p>
                 </div>
                 <div class="product_lead">
                     <img src="link.png" alt="link" style="width: 30px; height: auto;">
@@ -320,9 +355,10 @@
                     <h2>03</h2>
                 </div>
                 <div class="product_info">
-                    <h3>qqqqqqqq</h3>
-                    <h4>qwertasfg</h4>
-                    <p>qwertasfgqwertasfgqwertasfgqwertasfgqwertasfg</p>
+                    <h3>紅麴粉</h3>
+                    <h4>白天吃白米麴粉，晚上吃紅麴粉</h4>
+                    <p>選用無農藥&檢驗合格米（保留外膜）+ 日本國菌
+                        紅麴粉是台灣製造、檢驗合格無橘黴素。</p>
                 </div>
                 <div class="product_lead">
                     <img src="link.png" alt="link" style="width: 30px; height: auto;">
@@ -334,14 +370,18 @@
 
     <div class="tomore_area">
         <div class="tomore_area_left">
-            <p>qqqqqqqq</p>
+            <h2>報名課程</h2>
+            <p>查看蔣夫人的全台巡迴課程，選擇自己所喜歡的課程報名，把健康生活帶回家。</p>
+            <img src="link.png" alt="link" style="width: 30px; height: auto;">
         </div>
         <div class="tomore_space"> </div>
         <div class="tomore_line"> </div>
         <div class="tomore_space">
         </div>
         <div class="tomore_area_right">
-            <p>PPPP</p>
+            <h2>逛逛商品</h2>
+            <p>沒有時間?場地不方便?那來逛逛我們的商場吧，我們提供直接宅配到家，或是店到店的商品寄送服務，更有線上課程提供忙碌的你選擇。</p>
+            <img src="link.png" alt="link" style="width: 30px; height: auto;">
         </div>
     </div>
 
