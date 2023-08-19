@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -10,139 +11,129 @@
   <link rel="stylesheet" href="word.css">
   <style>
     * {
-    box-sizing: border-box; /* 確保所有元素的邊框和內距都包括在元素的總寬度和高度中 */
+      box-sizing: border-box;
+      /* 確保所有元素的邊框和內距都包括在元素的總寬度和高度中 */
+    }
+    .full {
+  display: flex;
+  align-items: center; /* 如果您想要子元素在垂直方向上居中 */
+  justify-content: space-between; /* 如果您想要子元素之間有等距的間隔 */
 }
-    body {
-      font-family: 'GenWanMin';
+
+
+    .container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+.nav-link {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  text-decoration: none;
+  color: #4e4545;
+  position: relative;
+  transition: color 0.5s ease;  /* 加入過渡效果，使之更慢 */
+}
+img {
+   max-width: 100%;
+   height: auto;
+}
+
+/* 當滑鼠懸停在任一連結上，設定其他連結為白色或透明 */
+.container:hover .nav-link {
+  color: white;
+}
+
+.container .nav-link:hover {
+  color: #4e4545;
+}
+
+.nav-link::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0;
+  transform: scaleY(0);
+  transform-origin: top left; /* 修改此行 */
+  background: #4e454548;
+  z-index: -1;
+  transition: transform 0.5s ease; /* 加入過渡效果，使之更慢 */
+}
+
+.nav-link:hover::before {
+  transform: scaleY(1);
+  transform-origin: top left;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  font-family: system-ui, sans-serif;
+  font-family: 'GenWanMin';
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-    .title_area {
-    display: flex;
-    justify-content: center;  /* 這將在水平方向上居中子元素 */
-    align-items: center;      /* 這將在垂直方向上居中子元素 */
-    width: 100%;
-    margin: auto;
 }
 
-
-.title_area_left {
-    padding: 50px; /* 添加內部間距 */
-    width:40; 
-    margin-right: 20px;
-}
-
-.title_area img {
-    align-self: flex-end;
-    margin-left: 20px;
-}
-.title_area_left p:nth-child(2) {
-    font-size: 16px; /* 你可以根據需求調整這個值 */
-}
-    .content_area {
-
-    }
-    .tomore_area {
-
-    }
-    .navbar {
-      height: 100px;
-      display: flex;
-      align-items: center; /* 將元素垂直置中對齊 */
-      padding: 0 20px; /* 添加左右兩側的間距 */
-    }
-
-    .navbar div:not(:first-child) {
-      flex-grow: 1; /* 其他元素均勻分布 */
-      display: flex;
-      justify-content: space-between; /* 水平間距均勻分布 */
-    }
-    .title {
-  margin-left: 35px;
-}
-
-    .navbar a {
-      margin: 0 10px; /* 每個元素之間的間距 */
-    }
-    footer {
-  background-color: #a2b2a6;
-  padding: 0; /* 移除底部的 padding */
-  margin: 0; /* 移除底部的 margin */
-}
-.contact-info{
-    padding: 10px;
-}
-.footer-content {
+.mid {
   display: flex;
-  align-items: center; /* 垂直置中對齊元素 */
+  flex-direction: column; /* 這會使子元素垂直堆疊 */
+  align-items: center; /* 水平置中 */
+  justify-content: center; /* 垂直置中 */
+  width: 30vw;
+  height: 100vh; /* 使.mid占滿視窗的高度，從而可以真正地置中內容 */
 }
-.logo{
-    padding: 20px;
+
+.left{
+  width: 35vw;
 }
-.content p{
-  color: #4e4545;
-  font-size: 30px;
+.right{
+  width: 35vw;
 }
+
+@media (orientation: landscape) {
+  body {
+    flex-direction: column;
+  }
+}
+
   </style>
 </head>
+
 <body>
-  <!-- 導覽列 標頭列-->
-  
-  <div class="navbar">
-    <img src="logo.png" alt="LOGO" style="width: 100px; height: auto;">
-    <div class="title">
-      <a href="about_us.html">關於我們</a>
-      <a href="#">近期課表</a>
-      <a href="#">購買產品</a>
-      <a href="#">購買線上課程</a>
-      <a href="#">會員專區</a>
-    </div>
-    <div class="category">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-  </div>
-  
-  <!-- 內容區域 -->
-<div class="content">
-
-  <div class="title_area">
-
-    <div class="title_area_left">
-      <p>關於我們</p>
-      <p>-蔣家小館</p>
-    </div>
-
-    <img src="about_us.jpg" alt="about_us" style="width: 500px; height: auto;">
-    
-  </div>
-  <div class="content_area">
-
-  </div>
-  <div class="tomore_area">
-    
-  </div>
-  
-
+<div class="full">
+<div class="left">
+  <img src="index_1.jpg" alt="LOGO" style="width: 720px; height:1080px;">
 
 </div>
-  <!-- 底部 -->
-  <footer>
-    <div class="footer-content">
-      <div class="logo">
-        <img src="logo.png" alt="LOGO" style="width: 100px; height: auto;">
-      </div>
-      <div class="contact-info">
-        <p>地址</p>
-        <p>TEL</p>
-        <p>FB</p>
-        <p>LINE</p>
-      </div>
-    </div>
-  </footer>
-  
-  
+
+<div class="mid">
+  <h1>蔣家小館</h1>
+  <div class="container">
+    <a href="1_about_us.html" class="nav-link">關於我們</a>
+    <a href="1_class.html" class="nav-link">查看課程</a>
+    <a href="1_other.html" class="nav-link">好物推薦</a>
+    <a href="1_product.html" class="nav-link">購買產品‧線上課程</a>
+    <a href="1_menber.html" class="nav-link">會員專區</a>
+</div>
+</div>
+
+<div class="left">
+  <img src="index_2.jpg" alt="LOGO" style="width: 720px; height:1080px;">
+</div>
+</div>
 </body>
+
 </html>
