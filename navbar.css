@@ -5,7 +5,7 @@
 
 .navbox {
   padding: 50px;
-  background-color: #fff;
+  background-color: #de202000;
   font-size: 1rem;
   line-height: 1.5;
   color: #000;
@@ -130,7 +130,7 @@
   left: 0;
   width: 100%;
   padding: .5rem 0;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(236, 179, 179, 0.92);
   z-index: 3;
   will-change: transform;
   transition: background 0.3s, -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
@@ -138,6 +138,7 @@
   transition: transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1), background 0.3s, -webkit-transform 0.5s cubic-bezier(0.694, 0.048, 0.335, 1);
   transform: translateY(0);
   -webkit-transform: translateY(0);
+
 }
 .nav nav .logo {
   float: left;
