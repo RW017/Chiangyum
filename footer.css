@@ -1,0 +1,47 @@
+.footer_container {
+  background-color: rgb(235, 235, 235);
+  padding: 25px;
+  margin: 0px;
+}
+
+.footer_class {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0px;
+  margin: 0px;
+  gap: 20px;
+}
+
+.footer_content {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.footer_href {
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none; /* 移除底線 */
+  color: #4e4545; /* 設定文字顏色 */
+}
+.footer_href:hover {
+  text-decoration: underline; /* 滑鼠懸停時加上底線 */
+}
+/* New CSS */
+.footer_container h2{
+  margin-top: 10px; /* Adjust this value as needed */
+  margin-bottom: 10px; /* Adjust this value as needed */
+}
+.footer_container h5 {
+  margin-top: 10px; /* Adjust this value as needed */
+  margin-bottom: 10px; /* Adjust this value as needed */
+}
+.copyright {
+  padding-top: 30px;
+  text-align: center;
+}
