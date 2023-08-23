@@ -16,7 +16,7 @@
         body {
             font-family: 'GenWanMin';
             margin: 25px;
-            padding: 0;
+            padding: 50px;
             box-sizing: border-box;
         }
 
@@ -40,7 +40,7 @@
         }
 
         .inner {
-            /* border: 1px solid black;*/
+             /* border: 1px solid black; */
             box-sizing: border-box;
             display: flex;
             justify-content: center;
@@ -50,10 +50,10 @@
             /* 回復這一行，讓大螢幕上每行兩個 */
             flex-shrink: 0;
             flex-grow: 0;
-            padding: 30px;
+           /* padding: 30px; */
         }
 
-        @media (max-width: 800px) {
+        @media (max-width: 1000px) {
             .inner {
                 width: 100%;
             }
@@ -70,6 +70,12 @@
         .title_area_right {
             margin-left: 15px;
         }
+
+        .title_area_right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 這會使圖片保持其原始寬高比，多餘的部分會被裁剪 */
+}
 
 
         .title_area_left p:nth-child(1) {
@@ -98,8 +104,13 @@
         .contect_area_left {
             margin-top: 0;
         }
-
+        .contect_area_left p {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4e4545;
+        }
         .contect_area_right {
+            padding-top: 50px ;
             margin-top: 0;
         }
 
@@ -133,6 +144,12 @@
         }
 
         /*延伸區域*/
+        .tomore_area_left{
+            padding: 50px ;
+        }
+        .tomore_area_right{
+            padding: 50px ;
+        }
         /*底部區域*/
     </style>
 </head>
@@ -175,16 +192,18 @@
                 <p>-蔣家小館</p>
             </div>
         </div>
-        <!-- 標題圖片 -->
-        <div class="inner ">
+        <!-- 標題圖片 -->  
+               
+        <div class="inner">
             <div class="title_area_right">
-                <img src="about_us.jpg" alt="about_us" style="width: 250px; height: 150px;">
+                <!-- 注意這裡移除了 inline 的 style -->
+                <img src="about_us.jpg" alt="about_us">
             </div>
         </div>
         <!-- 官方介紹 -->
         <div class="inner ">
             <div class="contect_area_left">
-                <h5>我們相信最真實的好處來自互利，
+                <p>我們相信最真實的好處來自互利，
                     <br><br>
                     彼此感恩互助可以成就長遠的美好關係。
                     <br><br><br>
@@ -201,7 +220,7 @@
                     一個人的力量有限。
                     <br><br>
                     但一群人的力量就可以翻轉世界。
-                </h5>
+                </p>
             </div>
         </div>
         <!-- 主推產品 -->
@@ -281,10 +300,11 @@
             </div>
         </div>
     </div>
+    <hr>
     <!-- 底部 -->
     <footer class="footer_container">
+          <h2>蔣家小館</h2>
         <div class="footer_class">
-            <h2>蔣家小館</h2>
             <div class="footer_content">
                 <h5>TEL：0932149239</h5>
                 <h5>908屏東縣長治鄉長生街231巷16號</h5>
@@ -306,7 +326,7 @@
         </div>
         <h5 class="copyright">Copyright © 2023 RW017.</h5>
 
-    </footer>
+</footer>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
     <script src="./navbar.js"></script>

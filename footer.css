@@ -1,12 +1,14 @@
+
+
 .footer_container {
-  background-color: rgb(235, 235, 235);
-  padding: 25px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   margin: 0px;
 }
 
 .footer_class {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-start; /* 修正此行 */
   flex-wrap: wrap;
   padding: 0px;
   margin: 0px;
@@ -14,15 +16,20 @@
 }
 
 .footer_content {
-  padding: 0px;
-  margin: 0px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* 移除 space-between */
+  padding-right: 45px;
+  margin: 0px;
   flex-wrap: wrap;
   gap: 5px;
 }
 
+
+.footer_content a {
+  font-size: 12px;
+  font-weight: bold;
+}
 .footer_href {
   padding: 0px;
   margin: 0px;
@@ -42,6 +49,24 @@
   margin-bottom: 10px; /* Adjust this value as needed */
 }
 .copyright {
-  padding-top: 30px;
+  width: 100%; /* 讓版權訊息佔據整行 */
   text-align: center;
+  padding-top: 30px;
+}
+
+@media (max-width: 650px) {
+  .footer_class {
+    flex-wrap: wrap; /* 允許子元素換行 */
+  }
+
+  /* 針對第一個 .footer_content 設定 */
+  .footer_class .footer_content:first-child {
+    flex: 1 0 100%; /* 使其獨占一行 */
+    padding-right: 0; /* 取消右側的 padding */
+  }
+
+  /* 針對第二和第三個 .footer_content 設定 */
+  .footer_class .footer_content:not(:first-child) {
+    flex: 1; /* 讓其佔據可用空間的一半 */
+  }
 }
