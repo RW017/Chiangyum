@@ -1,10 +1,10 @@
 <?php
 // Include config file
-require_once "config.php";
+require_once "2_config.php";
 $conn = $GLOBALS['link'];
-// Define variables and initialize with empty values
-$username = $_POST["employee_account"];
-$password = $_POST["employee_password"];
+// Define variables and initialize with empty value
+$username = isset($_POST["username"]) ? $_POST["username"] : '';
+$password = isset($_POST["password"]) ? $_POST["password"] : '';
  
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["username"] = $row["employee_account"];
         
         // Redirect to welcome page
-        header("location: welcome.php");
+        header("location: 2_home.php");
     } else {
         // Display an error message if username or password is incorrect
         function_alert("帳號或密碼錯誤");
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 mysqli_close($conn);
 
 function function_alert($message) {
-    echo "<script>alert('$message'); window.location.href='2_login.php';</script>";
+   echo "<script>alert('$message'); window.location.href='2_login.php';</script>";
     return false;
 }
 ?>
