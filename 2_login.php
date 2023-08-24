@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: welcome.php");
+    header("location: 2_home.php");
     exit;  //記得要跳出來，不然會重複轉址過多次
 }
 ?>
@@ -16,13 +16,13 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 <body>
     <h1>Log In</h1>
     <h2>你可以選擇登入或是註冊帳號~</h2>
-<form method="post" action="2_sigin.php">
+<form method="post" action="2_login.php">
 帳號：
 <input type="text" name="username"><br/><br/>
 密碼：
 <input type="password" name="password"><br><br>
 <input type="submit" value="登入" name="submit"><br><br>
-<a href="2_register.php">還沒有帳號？現在就註冊！</a>
+<a href="2_register.html">還沒有帳號？現在就註冊！</a>
 </form>
 </body>
 </html>

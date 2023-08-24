@@ -1,42 +1,40 @@
 <?php
 // Include config file
-$conn=require_once "config.php";
- 
+require_once "config.php";
+$conn = $GLOBALS['link'];
 // Define variables and initialize with empty values
-$username=$_POST["username"];
-$password=$_POST["password"];
-//增加hash可以提高安全性
-$password_hash=password_hash($password,PASSWORD_DEFAULT);
+$username = $_POST["employee_account"];
+$password = $_POST["employee_password"];
+ 
 // Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $sql = "SELECT * FROM users WHERE username ='".$username."'";
-    $result=mysqli_query($conn,$sql);
-    if(mysqli_num_rows($result)==1 && $password==mysqli_fetch_assoc($result)["password"]){
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Change SQL to fit your database
+    $sql = "SELECT * FROM employee WHERE employee_account = '$username' AND employee_password = '$password'";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+
+        // Start a new session
         session_start();
+        
         // Store data in session variables
         $_SESSION["loggedin"] = true;
-        //這些是之後可以用到的變數
-        $_SESSION["id"] = mysqli_fetch_assoc($result)["id"];
-        $_SESSION["username"] = mysqli_fetch_assoc($result)["username"];
-        header("location:welcome.php");
-    }else{
-            function_alert("帳號或密碼錯誤"); 
-        }
-}
-    else{
-        function_alert("Something wrong"); 
+        $_SESSION["id"] = $row["employee_id"];
+        $_SESSION["username"] = $row["employee_account"];
+        
+        // Redirect to welcome page
+        header("location: welcome.php");
+    } else {
+        // Display an error message if username or password is incorrect
+        function_alert("帳號或密碼錯誤");
     }
+}
+// Close connection
+mysqli_close($conn);
 
-    // Close connection
-    mysqli_close($link);
-
-function function_alert($message) { 
-      
-    // Display the alert box  
-    echo "<script>alert('$message');
-     window.location.href='2_login.php';
-    </script>"; 
+function function_alert($message) {
+    echo "<script>alert('$message'); window.location.href='2_login.php';</script>";
     return false;
-} 
-?>
+}
 ?>
