@@ -1,55 +1,66 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="zh-TW">
 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
     <title>主頁面</title>
     <link rel="stylesheet" href="word.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <style>
+        /*主設定*/
         body {
             font-family: 'GenWanMin';
-            margin: 0;
-            padding: 0;
+            margin: 25px;
+            padding: 50px;
             box-sizing: border-box;
         }
 
-        /* 標題列 */
-        .navbar {
-            height: 100px;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #4e4545;
+        }
+
+        /*排版*/
+        .outer {
             display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .inner {
+             border: 1px solid black;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
             align-items: center;
-            padding: 0 20px;
-
-            /* 添加左右兩側的間距 */
+            line-height: normal;
+            width: calc(50% - 5px);
+            /* 回復這一行，讓大螢幕上每行兩個 */
+            flex-shrink: 0;
+            flex-grow: 0;
+           /* padding: 30px; */
         }
 
-        .navbar div:not(:first-child) {
-            flex-grow: 1;
-            /* 其他元素均勻分布 */
-            display: flex;
-            justify-content: space-between;
-            /* 水平間距均勻分布 */
-        }
-
-        .navbar a {
-
-            margin: 0 10px;
-            /* 每個元素之間的間距 */
+        @media (max-width: 1000px) {
+            .inner {
+                width: 100%;
+            }
         }
 
         /*標題區域 */
 
-        .title_area {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 280px;
-
-        }
 
         .title_area_left {
             padding: 20px;
@@ -59,6 +70,12 @@
         .title_area_right {
             margin-left: 15px;
         }
+
+        .title_area_right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 這會使圖片保持其原始寬高比，多餘的部分會被裁剪 */
+}
 
 
         .title_area_left p:nth-child(1) {
@@ -83,117 +100,139 @@
             /* 這裡設定的是 5px，但你可以根據需要進行調整 */
         }
 
-
-        /*資訊區域 */
         /*內容區域 */
-        /*底部區域*/
-        .botton_area {}
-
-        .footer-content {
-            display: flex;
-            align-items: center;
+        .contect_area_left {
+            margin-top: 0;
+        }
+        .contect_area_left p {
+            font-size: 20px;
+            font-weight: bold;
+            color: #4e4545;
+        }
+        .contect_area_right {
+            padding-top: 50px ;
+            margin-top: 0;
         }
 
-        footer {
-            background-color: #a2b2a6;
-            padding: 0;
-            margin: 0;
-        }
-
-        .contact-info {
+        .contact_space {
             padding: 10px;
         }
 
-
-
-        .logo {
-            padding: 20px;
+        /*產品小框 */
+        .product {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
         }
 
-        /*雜七雜八*/
-        .title {
-            margin-left: 35px;
+        .product_num {
+            flex: 1;
+            padding: 10px;
+            align-self: flex-start;
         }
 
-        .content p {
-            color: #4e4545;
-            font-size: 30px;
+        .product_info {
+            flex: 8;
+            padding: 10px;
+            align-self: flex-start;
         }
 
-        a {
-            text-decoration: none;
-            /* 去除底線 */
-            color: #4e4545;
-            /* 將文字顏色設為黑色 */
+        .product_lead {
+            flex: 1;
+            padding: 10px;
+            align-self: flex-end;
         }
 
-        a:hover {
-            text-decoration: underline;
-            /* 當滑鼠懸停時添加底線 */
+        /*延伸區域*/
+        .tomore_area_left{
+            padding: 50px ;
         }
-
-        .title a img {
-            height: 1em;
-            /* 1em 通常相當於該元素的字體大小 */
-            width: auto;
+        .tomore_area_right{
+            padding: 50px ;
         }
-        h1,h2,h3,h4,h5,p {
-    color: #4E4545; /* 設定字體色號 */
-}
+        /*底部區域*/
     </style>
 </head>
 
 <body>
+
     <!-- 導覽列-->
-    <div class="navbar">
-      <a href="0_main.html">
-        <img src="logo.png" alt="LOGO" style="width: 100px; height: auto;">
-        </a>        <div class="title">
-          <a href="1_about_us.html">關於我們</a>
-          <a href="1_class.html">查看課程</a>
-          <a href="1_other.html">好物推薦</a>
-          <a href="1_product.html">購買產品‧線上課程</a>
-          <a href="1_menber.html">會員專區</a>
-          <a href="1_cart.html">
-                <img src="shopping-cart.png" alt="Shopping Cart">
-            </a>
-        </div>
-        <div class="category">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-    </div>
-
-    <!-- 標題區域 -->
-    <div class="title_area">
-        <div class="title_area_left">
-            <p>好物推薦</p>
-            <p>-夫人好物不私藏</p>
-        </div>
-        <div class="title_area_right">
-            <img src="other.jpg" alt="about_us" style="width: 500px; height: 280px;">
+    <div class="navbox">
+        <div class="nav">
+            <div class="containerr">
+                <nav id="navigation">
+                    <a href="0_main.html" class="logo">蔣家小館</a>
+                    <a aria-label="mobile menu" class="nav-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                    <ul class="menu-left">
+                        <li><a href="1_about_us.html">關於我們</a></li>
+                        <li><a href="1_class.html">查看課程</a></li>
+                        <li> <a href="1_eclass.html">線上課程</a></li>
+                        <li> <a href="1_product.html">購買產品</a></li>
+                        <li> <a href="1_other.html">好物推薦</a></li>
+                        <li> <a href="1_menber.html">會員專區</a></li>
+                        <li><a href="1_cart.html">
+                                <img src="shopping-cart.png" alt="Shopping Cart" style="width: 15px; height: auto;">
+                            </a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </div>
-
-<!-- 內容區域 -->
-<!-- 商品須預 -->
+    </div>
+    <!-- 內容 -->
+    <div class="outer">
+        <!-- 標題 -->
+        <div class="inner ">
+            <div class="title_area_left">
+                <p>查看課程</p>
+                <p>-蔣夫人的巡迴教室</p>
+            </div>
+        </div>
+        <!-- 標題圖片 -->  
+               
+        <div class="inner">
+            <div class="title_area_right">
+                <img src="class.jpg" alt="about_us">
+            </div>
+        </div>
+        <!-- 水平向當月課程 -->
+        
+        <!-- 合作教室列表 -->
+      
     <!-- 底部 -->
-    <footer>
-        <div class="footer-content">
-            <div class="logo">
-                <img src="logo.png" alt="LOGO" style="width: 100px; height: auto;">
+    <footer class="footer_container">
+          <h2>蔣家小館</h2>
+        <div class="footer_class">
+            <div class="footer_content">
+                <h5>TEL：0932149239</h5>
+                <h5>908屏東縣長治鄉長生街231巷16號</h5>
+                <h5>食品業者登錄字號:T-200151309-00000-7</h5>
+                <h5>本產品已投保富邦產品責任險</h5>
             </div>
-            <div class="contact-info">]
-                <p>蔣家小館</p>
-                <p>地址</p>
-                <p>TEL 0932149239</p>
-                <p>食品業者登錄字號:T-200151309-00000-7</p>
-                <p>本產品已投保富邦產品責任險</p>
+            <div class="footer_content">
+                <h5>課程</h5>
+                <a href="#" class="footer_href">實體課程</a>
+                <a href="#" class="footer_href">線上課程</a>
+                <a href="#" class="footer_href">蔣氏食譜</a>
+            </div>
+            <div class="footer_content">
+                <h5>產品</h5>
+                <a href="#" class="footer_href">蔣氏自製</a>
+                <a href="#" class="footer_href">私房好物</a>
+                <a href="#" class="footer_href">其他推薦</a>
             </div>
         </div>
-    </footer>
+        <h5 class="copyright">Copyright © 2023 RW017.</h5>
 
+</footer>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+    <script src="./navbar.js"></script>
+    <link rel="stylesheet" href="navbar.js">
 </body>
 
 </html>
