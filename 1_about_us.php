@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="word.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <style>
         /*主設定*/
@@ -28,6 +30,10 @@
         h6 {
             color: #4e4545;
         }
+        p {
+            font-weight: bold;
+            color: #4e4545;
+        }
 
         /*排版*/
         .outer {
@@ -40,7 +46,7 @@
         }
 
         .inner {
-             border: 1px solid black;
+             /* border: 1px solid black; */
             box-sizing: border-box;
             display: flex;
             justify-content: center;
@@ -168,15 +174,12 @@
                         <span></span>
                     </a>
                     <ul class="menu-left">
-                        <li><a href="1_about_us.html">關於我們</a></li>
-                        <li><a href="1_class.html">查看課程</a></li>
-                        <li> <a href="1_eclass.html">線上課程</a></li>
-                        <li> <a href="1_product.html">購買產品</a></li>
-                        <li> <a href="1_other.html">好物推薦</a></li>
-                        <li> <a href="1_menber.html">會員專區</a></li>
-                        <li><a href="1_cart.html">
-                                <img src="shopping-cart.png" alt="Shopping Cart" style="width: 15px; height: auto;">
-                            </a></li>
+                        <li><a href="1_about_us.php">關於我們</a></li>
+                        <li><a href="1_class.php">查看課程</a></li>
+                        <li> <a href="1_eclass.php">線上課程</a></li>
+                        <li> <a href="1_product.php">購買產品</a></li>
+                        <li> <a href="1_other.php">好物推薦</a></li>
+                        <li> <a href="1_menber.php">會員專區</a></li>
                     </ul>
                 </nav>
             </div>
@@ -188,21 +191,119 @@
         <!-- 標題 -->
         <div class="inner ">
             <div class="title_area_left">
-                <p>查看課程</p>
-                <p>-蔣夫人的巡迴教室</p>
+                <p>關於我們</p>
+                <p>-蔣家小館</p>
             </div>
         </div>
         <!-- 標題圖片 -->  
                
         <div class="inner">
             <div class="title_area_right">
-                <img src="class.jpg" alt="about_us">
+                <!-- 注意這裡移除了 inline 的 style -->
+                <img src="about_us.jpg" alt="about_us">
             </div>
         </div>
-        <!-- 水平向當月課程 -->
-        
-        <!-- 合作教室列表 -->
-      
+        <!-- 官方介紹 -->
+        <div class="inner ">
+            <div class="contect_area_left">
+                <p>我們相信最真實的好處來自互利，
+                    <br><br>
+                    彼此感恩互助可以成就長遠的美好關係。
+                    <br><br><br>
+                    里仁以通路角色出發，
+                    <br><br>
+                    想要實現的卻是一個人與人、土地與土地，
+                    <br><br>
+                    所有事物之間都健康和樂的社會理想。
+                    <br><br><br>
+                    因此，我們拉著所有人的手一起前行，
+                    <br><br>
+                    守護土地與健康的使命沒有終點。
+                    <br><br><br>
+                    一個人的力量有限。
+                    <br><br>
+                    但一群人的力量就可以翻轉世界。
+                </p>
+            </div>
+        </div>
+        <!-- 主推產品 -->
+        <div class="inner ">
+            <div class="contect_area">
+                <div class="contect_area_right">
+                    <h1>主推產品</h1>
+                    <hr>
+                    <!-- 商品一 -->
+                    <div class="product">
+                        <div class="product_num">
+                            <h2>01</h2>
+                        </div>
+                        <div class="product_info">
+                            <h3>米麴</h3>
+                            <h4>選用無農藥&檢驗合格米（保留外膜）+ 日本國菌
+                            </h4>
+                            <h5>將米麴外層有長菌絲的部份（佔約7成）磨成粉，
+                                菌絲含各種酵素與營養質。
+                                優質米麴能製作出更美味與更營養的發酵好物</h5>
+                        </div>
+                        <div class="product_lead">
+                            <img src="link.png" alt="link" style="width: 30px; height: auto;">
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <!-- 商品二 -->
+                <div class="product">
+                    <div class="product_num">
+                        <h2>02</h2>
+                    </div>
+                    <div class="product_info">
+                        <h3>米麴（粒狀）</h3>
+                        <h4>選用無農藥&檢驗合格米 + 日本國菌</h4>
+                        <h5>米麴是使用磨得沒有很精白的無農藥白米
+                            (有多些膳食纖維&營養質)
+                            米麴是製作甘糀、鹽麴、纖穀釀 、味噌、醬油、
+                            醬油麴、豆腐乳...等，最重要的元素。</h5>
+                    </div>
+                    <div class="product_lead">
+                        <img src="link.png" alt="link" style="width: 30px; height: auto;">
+                    </div>
+                </div>
+                <hr>
+                <!-- 商品三 -->
+                <div class="product">
+                    <div class="product_num">
+                        <h2>03</h2>
+                    </div>
+                    <div class="product_info">
+                        <h3>紅麴粉</h3>
+                        <h4>白天吃白米麴粉，晚上吃紅麴粉</h4>
+                        <h5>選用無農藥&檢驗合格米（保留外膜）+ 日本國菌
+                            紅麴粉是台灣製造、檢驗合格無橘黴素。</h5>
+                    </div>
+                    <div class="product_lead">
+                        <img src="link.png" alt="link" style="width: 30px; height: auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 報名課程 -->
+        <div class="inner ">
+            <div class="tomore_area_left">
+                <h2>報名課程</h2>
+                <h5>查看蔣夫人的全台巡迴課程，選擇自己所喜歡的課程報名，把健康生活帶回家。</h5>
+                <img src="link.png" alt="link" style="width: 30px; height: auto;">
+            </div>
+        </div>
+        <!-- 逛逛商品 -->
+        <div class="inner ">
+            <div class="tomore_area_right">
+                <h2>逛逛商品</h2>
+                <h5>沒有時間?場地不方便?那來逛逛我們的商場吧，我們提供直接宅配到家，或是店到店的商品寄送服務，更有線上課程提供忙碌的你選擇。</h5>
+                <img src="link.png" alt="link" style="width: 30px; height: auto;">
+            </div>
+        </div>
+    </div>
+    <hr>
     <!-- 底部 -->
     <footer class="footer_container">
           <h2>蔣家小館</h2>

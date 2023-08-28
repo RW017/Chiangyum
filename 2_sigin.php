@@ -5,7 +5,7 @@ $conn = $GLOBALS['link'];
 // Define variables and initialize with empty value
 $username = isset($_POST["username"]) ? $_POST["username"] : '';
 $password = isset($_POST["password"]) ? $_POST["password"] : '';
- 
+
 // Processing form data when form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Change SQL to fit your database
@@ -22,9 +22,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["loggedin"] = true;
         $_SESSION["id"] = $row["employee_id"];
         $_SESSION["username"] = $row["employee_account"];
+        $_SESSION["rank"] = $row["employee_rank"]; // Store the rank in session
         
-        // Redirect to welcome page
-        header("location: 2_home.php");
+        // Redirect based on rank
+        if ($row["employee_rank"] == "管理者") {
+            header("location: 2_home_manager.php"); // Change to the appropriate admin page
+        } elseif ($row["employee_rank"] == "工程師") {
+            header("location:2_home_engineer.php"); // Change to the appropriate assistant page
+        } elseif ($row["employee_rank"] == "小幫手") {
+            header("location: 2_home_assistant.php"); // Change to the appropriate viewer page
+        } elseif ($row["employee_rank"] == "檢視者") {
+            header("location: 2_home_viewer.php"); // Change to the appropriate engineer page
+        } elseif ($row["employee_rank"] == "合作教室") {
+            header("location: 2_home_class.php"); // Change to the appropriate engineer page
+        } 
+        
+        exit; // Terminate script execution after redirect
     } else {
         // Display an error message if username or password is incorrect
         function_alert("帳號或密碼錯誤");

@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+<?php
+// Initialize the session
+session_start();
+?>
 
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>主頁面</title>
+    <title>會員專區</title>
     <link rel="stylesheet" href="word.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
@@ -28,6 +32,10 @@
         h6 {
             color: #4e4545;
         }
+        p {
+            font-weight: bold;
+            color: #4e4545;
+        }
 
         /*排版*/
         .outer {
@@ -37,10 +45,12 @@
             max-width: 1000px;
             margin: 0 auto;
             box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
         }
 
         .inner {
-             border: 1px solid black;
+            border: 1px solid black;
             box-sizing: border-box;
             display: flex;
             justify-content: center;
@@ -50,7 +60,7 @@
             /* 回復這一行，讓大螢幕上每行兩個 */
             flex-shrink: 0;
             flex-grow: 0;
-           /* padding: 30px; */
+            /* padding: 30px; */
         }
 
         @media (max-width: 1000px) {
@@ -72,10 +82,11 @@
         }
 
         .title_area_right img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 這會使圖片保持其原始寬高比，多餘的部分會被裁剪 */
-}
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 這會使圖片保持其原始寬高比，多餘的部分會被裁剪 */
+        }
 
 
         .title_area_left p:nth-child(1) {
@@ -104,13 +115,15 @@
         .contect_area_left {
             margin-top: 0;
         }
+
         .contect_area_left p {
             font-size: 20px;
             font-weight: bold;
             color: #4e4545;
         }
+
         .contect_area_right {
-            padding-top: 50px ;
+            padding-top: 50px;
             margin-top: 0;
         }
 
@@ -144,68 +157,90 @@
         }
 
         /*延伸區域*/
-        .tomore_area_left{
-            padding: 50px ;
+        .tomore_area_left {
+            padding: 50px;
         }
-        .tomore_area_right{
-            padding: 50px ;
+
+        .tomore_area_right {
+            padding: 50px;
         }
+
         /*底部區域*/
     </style>
 </head>
 
 <body>
 
-    <!-- 導覽列-->
-    <div class="navbox">
-        <div class="nav">
-            <div class="containerr">
-                <nav id="navigation">
-                    <a href="0_main.html" class="logo">蔣家小館</a>
-                    <a aria-label="mobile menu" class="nav-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </a>
-                    <ul class="menu-left">
-                        <li><a href="1_about_us.html">關於我們</a></li>
-                        <li><a href="1_class.html">查看課程</a></li>
-                        <li> <a href="1_eclass.html">線上課程</a></li>
-                        <li> <a href="1_product.html">購買產品</a></li>
-                        <li> <a href="1_other.html">好物推薦</a></li>
-                        <li> <a href="1_menber.html">會員專區</a></li>
-                        <li><a href="1_cart.html">
-                                <img src="shopping-cart.png" alt="Shopping Cart" style="width: 15px; height: auto;">
-                            </a></li>
-                    </ul>
-                </nav>
-            </div>
+     <!-- 導覽列-->
+  <div class="navbox">
+    <div class="nav">
+        <div class="containerr">
+            <nav id="navigation">
+                <a href="0_main.html" class="logo">蔣家小館</a>
+                <a aria-label="mobile menu" class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+
+
+
+                <ul class="menu-left">
+<li><a href="1_about_us.php">關於我們</a></li>
+<li><a href="1_class.php">查看課程</a></li>
+<li><a href="1_eclass.php">線上課程</a></li>
+<li><a href="1_product.php">購買產品</a></li>
+<li><a href="1_other.php">好物推薦</a></li>
+<li><a href="1_menber.php">會員專區</a></li>
+
+<?php if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true): ?>
+    <!-- 只有在用户登录时才显示购物车图标 -->
+    <li><a href="1_cart.html">
+        <img src="shopping-cart.png" alt="Shopping Cart" style="width: 15px; height: auto;">
+    </a></li>
+    
+    <li><span>歡迎, <?php echo $_SESSION["u_username"]; ?></span></li>
+<?php else: ?>
+    <li><span></span></li>
+<?php endif; ?>
+</ul>
+
+            </nav>
         </div>
     </div>
-    </div>
+</div>
+</div>
+    <!-- 內容 -->
     <!-- 內容 -->
     <div class="outer">
         <!-- 標題 -->
-        <div class="inner ">
-            <div class="title_area_left">
-                <p>查看課程</p>
-                <p>-蔣夫人的巡迴教室</p>
+        <?php if (!isset($_SESSION["loggedin"])) : ?>
+            <div class="unknow ">
+                <p>會員專區</p>
+                <form method="post" action="1_sigin.php">
+                    帳號：<input type="text" name="u_username"><br /><br />
+                    密碼：<input type="password" name="u_password"><br><br>
+                    <input type="submit" value="登入" name="submit"><br><br>
+                </form>
             </div>
-        </div>
-        <!-- 標題圖片 -->  
-               
-        <div class="inner">
-            <div class="title_area_right">
-                <img src="class.jpg" alt="about_us">
+        <?php endif; ?>
+
+        <?php if (isset($_SESSION["loggedin"])) : ?>
+            <div class="know  ">
+                <p>MEOW</p>
+                <form method="post" action="1_logout.php">
+                    <input type="submit" value="登出" name="logout">
+                </form>
             </div>
-        </div>
-        <!-- 水平向當月課程 -->
-        
-        <!-- 合作教室列表 -->
-      
+        <?php endif; ?>
+    </div>
+    <!-- 水平向當月課程 -->
+
+    <!-- 合作教室列表 -->
+
     <!-- 底部 -->
     <footer class="footer_container">
-          <h2>蔣家小館</h2>
+        <h2>蔣家小館</h2>
         <div class="footer_class">
             <div class="footer_content">
                 <h5>TEL：0932149239</h5>
@@ -228,7 +263,7 @@
         </div>
         <h5 class="copyright">Copyright © 2023 RW017.</h5>
 
-</footer>
+    </footer>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
     <script src="./navbar.js"></script>
