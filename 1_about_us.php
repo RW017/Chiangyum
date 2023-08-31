@@ -200,7 +200,7 @@
         <div class="inner">
             <div class="title_area_right">
                 <!-- 注意這裡移除了 inline 的 style -->
-                <img src="about_us.jpg" alt="about_us">
+                <img src="material/about_us.jpg" alt="about_us">
             </div>
         </div>
         <!-- 官方介紹 -->
@@ -246,7 +246,7 @@
                                 優質米麴能製作出更美味與更營養的發酵好物</h5>
                         </div>
                         <div class="product_lead">
-                            <img src="link.png" alt="link" style="width: 30px; height: auto;">
+                            <img src="material/link.png" alt="link" style="width: 30px; height: auto;">
                         </div>
                     </div>
                     <hr>
@@ -265,7 +265,7 @@
                             醬油麴、豆腐乳...等，最重要的元素。</h5>
                     </div>
                     <div class="product_lead">
-                        <img src="link.png" alt="link" style="width: 30px; height: auto;">
+                        <img src="material/link.png" alt="link" style="width: 30px; height: auto;">
                     </div>
                 </div>
                 <hr>
@@ -281,7 +281,7 @@
                             紅麴粉是台灣製造、檢驗合格無橘黴素。</h5>
                     </div>
                     <div class="product_lead">
-                        <img src="link.png" alt="link" style="width: 30px; height: auto;">
+                        <img src="material/link.png" alt="link" style="width: 30px; height: auto;">
                     </div>
                 </div>
             </div>
@@ -291,7 +291,7 @@
             <div class="tomore_area_left">
                 <h2>報名課程</h2>
                 <h5>查看蔣夫人的全台巡迴課程，選擇自己所喜歡的課程報名，把健康生活帶回家。</h5>
-                <img src="link.png" alt="link" style="width: 30px; height: auto;">
+                <img src="material/link.png" alt="link" style="width: 30px; height: auto;">
             </div>
         </div>
         <!-- 逛逛商品 -->
@@ -299,7 +299,7 @@
             <div class="tomore_area_right">
                 <h2>逛逛商品</h2>
                 <h5>沒有時間?場地不方便?那來逛逛我們的商場吧，我們提供直接宅配到家，或是店到店的商品寄送服務，更有線上課程提供忙碌的你選擇。</h5>
-                <img src="link.png" alt="link" style="width: 30px; height: auto;">
+                <img src="material/link.png" alt="link" style="width: 30px; height: auto;">
             </div>
         </div>
     </div>

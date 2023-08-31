@@ -330,7 +330,7 @@ include('2_config.php');  // 假设你的数据库连接代码保存在这个文
                         <?php if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) : ?>
                             <!-- 只有在用户登录时才显示购物车图标 -->
                             <li><a href="1_cart.html">
-                                    <img src="shopping-cart.png" alt="Shopping Cart" style="width: 15px; height: auto;">
+                                    <img src="material/shopping-cart.png" alt="Shopping Cart" style="width: 15px; height: auto;">
                                 </a></li>
 
                             <li><span>歡迎, <?php echo $_SESSION["u_username"]; ?></span></li>

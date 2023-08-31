@@ -354,7 +354,7 @@ include('2_config.php');  // 假设你的数据库连接代码保存在这个文
         <!-- 標題圖片 -->
         <div class="inner">
             <div class="title_area_right">
-                <img src="class.jpg" alt="product">
+                <img src="material/class.jpg" alt="product">
             </div>
         </div>
     </div>
