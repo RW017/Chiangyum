@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "2_config.php";
+require_once "./admin/2_config.php";
 $conn = $GLOBALS['link'];
 // Define variables and initialize with empty value
 $u_username = isset($_POST["u_username"]) ? $_POST["u_username"] : '';

@@ -3,6 +3,7 @@
 <?php
 // Initialize the session
 session_start();
+include('./admin/2_config.php');  // 假设你的数据库连接代码保存在这个文件里
 ?>
 
 <head>

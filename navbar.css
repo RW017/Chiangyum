@@ -162,7 +162,8 @@
 }
 .nav nav ul li {
   float: none;
-  margin-left: 0;
+  margin-left: 0.5rem;  /* 調整這個數值 */
+
 }
 @media (min-width: 768px) {
   .nav nav ul li {
@@ -172,6 +173,8 @@
 }
 .nav nav ul li a {
   display: block;
+  padding: 0.425rem 0.2rem;  /* 調整這個數值 */
+
 }
 @media (min-width: 576px) {
   .nav nav ul li a {
@@ -217,7 +220,7 @@ ul.menu-left:before {
   clear: both;
 }
 ul.menu-left.collapse {
-  max-height: 15em !important;
+  max-height: 25em !important;
 }
 
 .nav-toggle {

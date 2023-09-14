@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="word.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <style>
         /*主設定*/
@@ -28,10 +26,6 @@
         h4,
         h5,
         h6 {
-            color: #4e4545;
-        }
-        p {
-            font-weight: bold;
             color: #4e4545;
         }
 
@@ -167,19 +161,20 @@
         <div class="nav">
             <div class="containerr">
                 <nav id="navigation">
-                    <a href="0_main.html" class="logo">蔣家小館</a>
+                    <a href="1_about_us.html" class="logo">蔣家小館</a>
                     <a aria-label="mobile menu" class="nav-toggle">
                         <span></span>
                         <span></span>
                         <span></span>
                     </a>
                     <ul class="menu-left">
-                        <li><a href="1_about_us.php">關於我們</a></li>
-                        <li><a href="1_class.php">查看課程</a></li>
-                        <li> <a href="1_eclass.php">線上課程</a></li>
-                        <li> <a href="1_product.php">購買產品</a></li>
-                        <li> <a href="1_other.php">好物推薦</a></li>
-                        <li> <a href="1_menber.php">會員專區</a></li>
+                        <li><a href="1_class.html">查看課程</a></li>
+                        <li> <a href="1_product.html">購買產品</a></li>
+                        <li> <a href="1_other.html">好物推薦</a></li>
+                        <li> <a href="1_menber.html">會員專區</a></li>
+                        <li><a href="1_cart.html">
+                                <img src="shopping-cart.png" alt="Shopping Cart" style="width: 15px; height: auto;">
+                            購物車</a></li>
                     </ul>
                 </nav>
             </div>

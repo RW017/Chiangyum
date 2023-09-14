@@ -189,9 +189,10 @@
   }
 }
 .hide-nav {
-  transform: translateY(-120% !important);
+  transform: translateY(-120%);
   -webkit-transform: translateY(-120%) !important;
 }
+
 
 ul.menu-left {
   display: block;
