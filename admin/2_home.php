@@ -85,8 +85,6 @@
         </div>
 
         <h1>待處裡訂單</h1>
-
-        <h1>待完成任務</h1>
         <?php
         //連線資料庫並讀取資料表
         $servername = "localhost";
@@ -102,6 +100,27 @@
         }
         //設定字符集,解決資料庫插入可能出現亂碼，設定編碼為GBK
         //構造sql查詢語句
+        $sql =  "select * from order";
+        //執行SQL語句
+        $result = $conn->query($sql);
+
+        echo '<table border="1" width="600" align="center">';
+        echo '<tr bgcolor="#dddddd">';
+        echo '<th>訂單編號</th><th>下單帳號</th><th>下單使用者</th><th>金額</th><th>下單日期</thth>備註</th>';
+        echo '</tr>';
+        while ($row = $result->fetch_assoc()) {
+            if ($row["todo_fin_employee_id"]==null) {
+            echo "<tr>";
+            echo "<td>" . $row["todo_id"] . "</td><td>" . $row["todo_todo_type_id"] . "</td><td>" . $row["todo_memo"] . "</td><td>" . $row["todo_employee_id"] . "</td><td>" . $row["todo_date"] . "</td><td>" . $row["todo_deadline"] . "</td>";
+            echo "</tr>";
+            }
+            
+        }
+
+        ?>
+        <h1>待完成任務</h1>
+
+        <?php
         $sql =  "select * from todo";
         //執行SQL語句
         $result = $conn->query($sql);

@@ -3,7 +3,7 @@
 <?php
 // Initialize the session
 session_start();
-include('./admin/2_config.php');  // 假设你的数据库连接代码保存在这个文件里
+include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这个文件里
 ?>
 
 <head>
@@ -12,7 +12,7 @@ include('./admin/2_config.php');  // 假设你的数据库连接代码保存在�
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>主頁面</title>
-    <link rel="stylesheet" href="word.css">
+    <link rel="stylesheet" href="..\font\word.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -33,10 +33,12 @@ include('./admin/2_config.php');  // 假设你的数据库连接代码保存在�
         h6 {
             color: #4e4545;
         }
+
         p {
             font-weight: bold;
             color: #4e4545;
         }
+
         /*排版*/
         .outer {
             /* border: 1px solid black; */
@@ -128,8 +130,8 @@ include('./admin/2_config.php');  // 假设你的数据库连接代码保存在�
             margin-top: 50px;
             margin-bottom: 50px;
             background: #A2B2A63D;
-            border: 1px  #A2B2A63D;
-            padding:25px;
+            border: 1px #A2B2A63D;
+            padding: 25px;
             box-sizing: border-box;
             text-align: center;
             /* 讓內容置中 */
@@ -137,7 +139,7 @@ include('./admin/2_config.php');  // 假设你的数据库连接代码保存在�
 
         .main_contect {
             /*border: 1px solid black;*/
-            
+
             display: flex;
             justify-content: space-between;
             /*或者用其他的排列方式，根據你的需求*/
@@ -310,32 +312,25 @@ include('./admin/2_config.php');  // 假设你的数据库连接代码保存在�
         <div class="nav">
             <div class="containerr">
                 <nav id="navigation">
-                    <a href="0_main.html" class="logo">蔣家小館</a>
+                    <a href="../shop/1_about_us.php" class="logo">蔣家小館</a>
                     <a aria-label="mobile menu" class="nav-toggle">
                         <span></span>
                         <span></span>
                         <span></span>
                     </a>
-
-
-
                     <ul class="menu-left">
-                        <li><a href="1_about_us.php">關於我們</a></li>
-                        <li><a href="1_class.php">查看課程</a></li>
-                        <li><a href="1_eclass.php">線上課程</a></li>
-                        <li><a href="1_product.php">購買產品</a></li>
-                        <li><a href="1_other.php">好物推薦</a></li>
-                        <li><a href="1_menber.php">會員專區</a></li>
+                        <li><a href="../shop/1_class.php">查看課程</a></li>
+                        <li> <a href="../shop/1_product.php">購買產品</a></li>
+                        <li> <a href="../shop/1_other.php">好物推薦</a></li>
+                        <li> <a href="../shop/1_menber.php">會員專區</a></li>
 
                         <?php if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) : ?>
                             <!-- 只有在用户登录时才显示购物车图标 -->
                             <li><a href="1_cart.html">
-                                    <img src="shopping-cart.png" alt="Shopping Cart" style="width: 15px; height: auto;">
+                            <img src="../material/icon/shopping-cart.png" alt="Shopping Cart" style="width: 15px; height: auto;">
                                 </a></li>
-
-                            <li><span>歡迎, <?php echo $_SESSION["u_username"]; ?></span></li>
                         <?php else : ?>
-                            <li><span></span></li>
+                            <li><a href="1_cart.php">登入</a></li>
                         <?php endif; ?>
                     </ul>
             </div>
@@ -354,7 +349,7 @@ include('./admin/2_config.php');  // 假设你的数据库连接代码保存在�
         <!-- 標題圖片 -->
         <div class="inner">
             <div class="title_area_right">
-                <img src="material/class.jpg" alt="product">
+                <img src="..\material\class\class.jpg" alt="product">
             </div>
         </div>
     </div>

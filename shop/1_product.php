@@ -3,7 +3,7 @@
 <?php
 // Initialize the session
 session_start();
-include('./admin/2_config.php');  // 假设你的数据库连接代码保存在这个文件里
+include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这个文件里
 ?>
 <head>
     <!-- Required meta tags -->
@@ -11,7 +11,7 @@ include('./admin/2_config.php');  // 假设你的数据库连接代码保存在�
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>主頁面</title>
-    <link rel="stylesheet" href="word.css">
+    <link rel="stylesheet" href="..\font\word.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -32,10 +32,12 @@ include('./admin/2_config.php');  // 假设你的数据库连接代码保存在�
         h6 {
             color: #4e4545;
         }
+
         p {
             font-weight: bold;
             color: #4e4545;
         }
+
         /*排版*/
         .outer {
             /* border: 1px solid black; */
@@ -124,11 +126,12 @@ include('./admin/2_config.php');  // 假设你的数据库连接代码保存在�
 
         /* 新增目錄（sidebar） */
         .sidebar {
+            width: 100%;
             margin-top: 50px;
             margin-bottom: 50px;
             background: #A2B2A63D;
-            border: 1px  #A2B2A63D;
-            padding:25px;
+            border: 1px #A2B2A63D;
+            padding: 25px;
             box-sizing: border-box;
             text-align: center;
             /* 讓內容置中 */
@@ -136,7 +139,7 @@ include('./admin/2_config.php');  // 假设你的数据库连接代码保存在�
 
         .main_contect {
             /*border: 1px solid black;*/
-            
+
             display: flex;
             justify-content: space-between;
             /*或者用其他的排列方式，根據你的需求*/
@@ -298,6 +301,10 @@ include('./admin/2_config.php');  // 假设你的数据库连接代码保存在�
         .tomore_area_right {
             padding: 50px;
         }
+        .product_inner:only-child {
+    flex-basis: 80%;
+    max-width: 100%;
+}
 
         /*底部區域*/
     </style>
@@ -309,32 +316,25 @@ include('./admin/2_config.php');  // 假设你的数据库连接代码保存在�
         <div class="nav">
             <div class="containerr">
                 <nav id="navigation">
-                    <a href="0_main.html" class="logo">蔣家小館</a>
+                <a href="../shop/1_about_us.php" class="logo">蔣家小館</a>
                     <a aria-label="mobile menu" class="nav-toggle">
                         <span></span>
                         <span></span>
                         <span></span>
                     </a>
-
-
-
                     <ul class="menu-left">
-                        <li><a href="1_about_us.php">關於我們</a></li>
-                        <li><a href="1_class.php">查看課程</a></li>
-                        <li><a href="1_eclass.php">線上課程</a></li>
-                        <li><a href="1_product.php">購買產品</a></li>
-                        <li><a href="1_other.php">好物推薦</a></li>
-                        <li><a href="1_menber.php">會員專區</a></li>
+                        <li><a href="../shop/1_class.php">查看課程</a></li>
+                        <li> <a href="../shop/1_product.php">購買產品</a></li>
+                        <li> <a href="../shop/1_other.php">好物推薦</a></li>
+                        <li> <a href="../shop/1_menber.php">會員專區</a></li>
 
                         <?php if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) : ?>
                             <!-- 只有在用户登录时才显示购物车图标 -->
                             <li><a href="1_cart.html">
-                                    <img src="shopping-cart.png" alt="Shopping Cart" style="width: 15px; height: auto;">
+                                    <img src="../material/icon/shopping-cart.png" alt="Shopping Cart" style="width: 15px; height: auto;">
                                 </a></li>
-
-                            <li><span>歡迎, <?php echo $_SESSION["u_username"]; ?></span></li>
                         <?php else : ?>
-                            <li><span></span></li>
+                            <li><a href="../shop/1_cart.php">登入</a></li>
                         <?php endif; ?>
                     </ul>
             </div>
@@ -353,38 +353,53 @@ include('./admin/2_config.php');  // 假设你的数据库连接代码保存在�
         <!-- 標題圖片 -->
         <div class="inner">
             <div class="title_area_right">
-                <img src="material/product/product_main.jpg" alt="product">
+                <img src="../material/product/product_main.jpg" alt="product">
             </div>
         </div>
     </div>
     <!-- 水平向分類 -->
+    <div class="sidebar">
+        <h3>分類</h3>
+        <ul id="sectionList" class="collapsed">
+            <li><a href="?filter=all">全部</a></li>
+            <li><a href="?filter=1">蔣家自製</a></li>
+            <li><a href="?filter=2">進貨</a></li>
+            <li><a href="?filter=3">調理包</a></li>
+        </ul>
+        <button id="toggleButton">
+            <img id="toggleImage" src="../material/icon/more.png" alt="摺疊/展開" />
+        </button>
+    </div>
     <div class="outer">
         <div class="main_content">
-            <div class="sidebar">
-                <h3>分類</h3>
-                <ul id="sectionList" class="collapsed">
-                    <li><a href="#section1">蔣家自製</a></li>
-                    <li><a href="#section2">進貨</a></li>
-                    <li><a href="#section3">調理包</a></li>
-                    <!-- ... -->
-                </ul>
-                <button id="toggleButton">
-                    <img id="toggleImage" src="more.png" alt="摺疊/展開" />
-                </button>
-            </div>
+
 
             <div class="product_outer">
                 <?php
-                // 使用全局变量中的数据库连接
-                if (isset($GLOBALS['link'])) {
-                    $link = $GLOBALS['link'];
+                // 使用全局變數中的資料庫連接
+                if (isset($GLOBALS['conn'])) {
+                    $conn = $GLOBALS['conn'];
 
+                    // SQL 查詢語句
                     $sql = "SELECT product_id, product_name, product_img, product_info, product_price FROM product";
-                    $result = mysqli_query($link, $sql);
 
-                    if (mysqli_num_rows($result) > 0) {
-                        // 输出每行数据
-                        while ($row = mysqli_fetch_assoc($result)) {
+                    // 檢查是否有 GET 參數，並相應地修改 SQL 查詢
+                    if (isset($_GET['filter'])) {
+                        $filter = $_GET['filter'];
+                        if ($filter === "all") {
+                            // 不做任何改變，顯示所有產品
+                        } elseif (is_numeric($filter)) {
+                            $sql .= " WHERE product_product_type_id = $filter";
+                        }
+                    }
+
+
+                    // 執行SQL查詢
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        // 輸出每行數據
+                        while ($row = $result->fetch_assoc()) {
                             echo '<div class="product_inner">';
                             echo '<img src="' . $row["product_img"] . '" alt="product" width="280" height="280">';
                             echo '<h3>' . $row["product_name"] . '</h3>';
@@ -393,10 +408,10 @@ include('./admin/2_config.php');  // 假设你的数据库连接代码保存在�
                             echo '</div>';
                         }
                     } else {
-                        echo "0 结果";
+                        echo "0 結果";
                     }
                 } else {
-                    echo "Database connection not established.";
+                    echo "資料庫連接未建立。";
                 }
                 ?>
             </div>
