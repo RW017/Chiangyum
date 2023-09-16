@@ -296,7 +296,8 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
             <div class="tomore_area_left">
                 <h2>報名課程</h2>
                 <h5>查看蔣夫人的全台巡迴課程，選擇自己所喜歡的課程報名，把健康生活帶回家。查看蔣夫人的全台巡迴課程，選擇自己所喜歡的課程報名，把健康生活帶回家。</h5>
-                <img src="..\material\icon\link.png" alt="link" style="width: 30px; height: auto;">
+               <a href="../shop/1_class.php"> <img src="..\material\icon\link.png" alt="link" style="width: 30px; height: auto;">
+</a>
             </div>
         </div>
         <!-- 逛逛商品 -->
@@ -304,7 +305,8 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
             <div class="tomore_area_right">
                 <h2>逛逛商品</h2>
                 <h5>沒有時間?場地不方便?那來逛逛我們的商場吧，我們提供直接宅配到家，或是店到店的商品寄送服務，更有線上課程提供忙碌的你選擇。</h5>
-                <img src="..\material\icon\link.png" alt="link" style="width: 30px; height: auto;">
+                <a href="../shop/1_product.php"> <img src="..\material\icon\link.png" alt="link" style="width: 30px; height: auto;">
+</a>
             </div>
         </div>
     </div>
@@ -321,15 +323,17 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
             </div>
             <div class="footer_content">
                 <h5>課程</h5>
-                <a href="#" class="footer_href">實體課程</a>
-                <a href="#" class="footer_href">線上課程</a>
-                <a href="#" class="footer_href">蔣氏食譜</a>
+                <a href="../shop/1_mclass.php" class="footer_href">所有課程</a>
+                <a href="../shop/1_class.php" class="footer_href">實體班</a>
+                <a href="../shop/1_eclass.php" class="footer_href">線上課</a>
+                <a href="../shop/1_rclass.php" class="footer_href">蔣氏食譜</a>
             </div>
             <div class="footer_content">
                 <h5>產品</h5>
-                <a href="#" class="footer_href">蔣氏自製</a>
-                <a href="#" class="footer_href">私房好物</a>
-                <a href="#" class="footer_href">其他推薦</a>
+                <a href="../shop/1_product.php" class="footer_href">蔣氏自製</a>
+                <a href="../shop/1_other.php" class="footer_href">私房好物</a>
+                <h5>會員</h5>
+                <a href="../shop/1_menber.php" class="footer_href">會員專區</a>
             </div>
         </div>
         <h5 class="copyright">Copyright © 2023 RW017.</h5>

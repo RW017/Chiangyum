@@ -311,8 +311,8 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
 </head>
 
 <body>
-    <!-- 導覽列-->
-    <div class="navbox">
+  <!-- 導覽列-->
+  <div class="navbox">
         <div class="nav">
             <div class="containerr">
                 <nav id="navigation">
@@ -331,12 +331,13 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
                         <?php if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) : ?>
                             <!-- 只有在用户登录时才显示购物车图标 -->
                             <li><a href="1_cart.html">
-                                    <img src="../material/icon/shopping-cart.png" alt="Shopping Cart" style="width: 15px; height: auto;">
+                            <img src="../material/icon/shopping-cart.png" alt="Shopping Cart" style="width: 15px; height: auto;">
                                 </a></li>
                         <?php else : ?>
-                            <li><a href="../shop/1_cart.php">登入</a></li>
+                            <li><a href="1_cart.php">登入</a></li>
                         <?php endif; ?>
                     </ul>
+                </nav>
             </div>
         </div>
     </div>
@@ -367,7 +368,7 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
             <li><a href="?filter=3">調理包</a></li>
         </ul>
         <button id="toggleButton">
-            <img id="toggleImage" src="../material/icon/more.png" alt="摺疊/展開" />
+            <img id="toggleImage" src="..\material\icon\more.png" alt="摺疊/展開" />
         </button>
     </div>
     <div class="outer">
@@ -419,7 +420,7 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
     </div>
     <!-- 底部 -->
     <footer class="footer_container">
-        <h2>蔣家小館</h2>
+          <h2>蔣家小館</h2>
         <div class="footer_class">
             <div class="footer_content">
                 <h5>TEL：0932149239</h5>
@@ -429,20 +430,20 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
             </div>
             <div class="footer_content">
                 <h5>課程</h5>
-                <a href="#" class="footer_href">實體課程</a>
-                <a href="#" class="footer_href">線上課程</a>
-                <a href="#" class="footer_href">蔣氏食譜</a>
+                <a href="../shop/1_mclass.php" class="footer_href">所有課程</a>
+                <a href="../shop/1_class.php" class="footer_href">實體班</a>
+                <a href="../shop/1_eclass.php" class="footer_href">線上課</a>
+                <a href="../shop/1_rclass.php" class="footer_href">蔣氏食譜</a>
             </div>
             <div class="footer_content">
                 <h5>產品</h5>
-                <a href="#" class="footer_href">蔣氏自製</a>
-                <a href="#" class="footer_href">私房好物</a>
-                <a href="#" class="footer_href">其他推薦</a>
+                <a href="../shop/1_product.php" class="footer_href">蔣氏自製</a>
+                <a href="../shop/1_other.php" class="footer_href">私房好物</a>
+                <h5>會員</h5>
+                <a href="../shop/1_menber.php" class="footer_href">會員專區</a>
             </div>
         </div>
-
         <h5 class="copyright">Copyright © 2023 RW017.</h5>
-
     </footer>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -453,10 +454,10 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
             toggleButton.addEventListener("click", function() {
                 if (sectionList.classList.contains("collapsed")) {
                     sectionList.classList.remove("collapsed");
-                    toggleImage.src = "back.png"; // 改變圖片為 back.png
+                    toggleImage.src = "../material/icon/back.png";
                 } else {
                     sectionList.classList.add("collapsed");
-                    toggleImage.src = "more.png"; // 改變圖片為 more.png
+                    toggleImage.src = "../material/icon/more.png"; 
                 }
             });
         });

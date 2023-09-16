@@ -39,6 +39,7 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
         /*排版*/
         .outer {
             /* border: 1px solid black; */
+            border: 1px solid black;
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
@@ -49,6 +50,7 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
 
         .inner {
             /* border: 1px solid black; */
+            border: 1px solid black;
             box-sizing: border-box;
             display: flex;
             justify-content: center;
@@ -339,57 +341,58 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
         <!-- 標題 -->
         <div class="inner ">
             <div class="title_area_left">
-                <p>購買產品</p>
-                <p>-讓蔣家來為生活忙碌的你把關</p>
+                <p>好物推薦</p>
+                <p>-蔣家好物不私藏</p>
             </div>
         </div>
         <!-- 標題圖片 -->
         <div class="inner">
             <div class="title_area_right">
-                <img src="material/product/product_main.jpg" alt="product">
+                <img src="../material/other/other.jpg" alt="product">
             </div>
         </div>
     </div>
-    <!-- 水平向分類 -->
-    <div class="outer">
-        <div class="main_content">
-            <div class="sidebar">
-                <h3>分類</h3>
-                <ul id="sectionList" class="collapsed">
-                    <li><a href="#section1">蔣家自製</a></li>
-                    <li><a href="#section2">進貨</a></li>
-                    <li><a href="#section3">調理包</a></li>
-                    <!-- ... -->
-                </ul>
-                <button id="toggleButton">
-                    <img id="toggleImage" src="more.png" alt="摺疊/展開" />
-                </button>
-            </div>
-
+   
             <div class="product_outer">
-                <?php
-                // 使用全局变量中的数据库连接
-                if (isset($GLOBALS['link'])) {
-                    $link = $GLOBALS['link'];
+            <?php
+                // 使用全局變數中的資料庫連接 
+                if (isset($GLOBALS['conn'])) {
+                    $conn = $GLOBALS['conn'];
 
-                    $sql = "SELECT product_id, product_name, product_img, product_info, product_price FROM product";
-                    $result = mysqli_query($link, $sql);
+                    // SQL 查詢語句
+                    $sql = "SELECT other_product_id, other_product_name, other_product_img, other_product_info, other_product_content,other_product_link FROM other_product";
+                    // 檢查是否有 GET 參數，並相應地修改 SQL 查詢
+                    if (isset($_GET['filter'])) {
+                        $filter = $_GET['filter'];
+                        if ($filter === "all") {
+                            // 不做任何改變，顯示所有產品
+                        } elseif (is_numeric($filter)) {
+                            $sql .= " WHERE product_product_type_id = $filter";
+                        }
+                    }
 
-                    if (mysqli_num_rows($result) > 0) {
-                        // 输出每行数据
-                        while ($row = mysqli_fetch_assoc($result)) {
+
+                    // 執行SQL查詢
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        // 輸出每行數據
+                        while ($row = $result->fetch_assoc()) {
                             echo '<div class="product_inner">';
-                            echo '<img src="' . $row["product_img"] . '" alt="product" width="280" height="280">';
-                            echo '<h3>' . $row["product_name"] . '</h3>';
-                            echo '<h5>' . $row["product_info"] . '</h5>';
-                            echo '<p>$ ' . $row["product_price"] . '</p>';
+                            echo '<img src="' . $row["other_product_img"] . '" alt="product" width="300" height="280">';
+                            echo '<h3>' . $row["other_product_name"] . '</h3>';
+                            echo '<h5>' . $row["other_product_info"] . '</h5>';
+                            echo '<h5>' . $row["other_product_content"] . '</h5>';
+                            echo '<a href="' . $row["other_product_link"] . '"><img src="../material/icon/link.png" alt="link" style="width: 30px; height: auto;"></a>';
+                            
+
                             echo '</div>';
                         }
                     } else {
-                        echo "0 结果";
+                        echo "0 結果";
                     }
                 } else {
-                    echo "Database connection not established.";
+                    echo "資料庫連接未建立。";
                 }
                 ?>
             </div>

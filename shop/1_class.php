@@ -307,19 +307,18 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
 </head>
 
 <body>
-    <!-- 導覽列-->
-    <div class="navbox">
+   <!-- 導覽列-->
+   <div class="navbox">
         <div class="nav">
             <div class="containerr">
                 <nav id="navigation">
-                <a href="#" class="logo">蔣家小館</a>
+                <a href="../shop/1_about_us.php" class="logo">蔣家小館</a>
                     <a aria-label="mobile menu" class="nav-toggle">
                         <span></span>
                         <span></span>
                         <span></span>
                     </a>
                     <ul class="menu-left">
-                        <li><a href="../shop/1_about_us.php">關於我們</a></li>
                         <li><a href="../shop/1_class.php">查看課程</a></li>
                         <li> <a href="../shop/1_product.php">購買產品</a></li>
                         <li> <a href="../shop/1_other.php">好物推薦</a></li>
@@ -334,6 +333,7 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
                             <li><a href="1_cart.php">登入</a></li>
                         <?php endif; ?>
                     </ul>
+                </nav>
             </div>
         </div>
     </div>
@@ -343,8 +343,8 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
         <!-- 標題 -->
         <div class="inner ">
             <div class="title_area_left">
-                <p>購買產品</p>
-                <p>-讓蔣家來為生活忙碌的你把關</p>
+                <p>查看課程</p>
+                <p>-選擇自己所喜歡的課程報名，<br>　把健康生活帶回家。</p>
             </div>
         </div>
         <!-- 標題圖片 -->
@@ -354,54 +354,11 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
             </div>
         </div>
     </div>
-    <!-- 水平向分類 -->
-    <div class="outer">
-        <div class="main_content">
-            <div class="sidebar">
-                <h3>分類</h3>
-                <ul id="sectionList" class="collapsed">
-                    <li><a href="#section1">蔣家自製</a></li>
-                    <li><a href="#section2">進貨</a></li>
-                    <li><a href="#section3">調理包</a></li>
-                    <!-- ... -->
-                </ul>
-                <button id="toggleButton">
-                    <img id="toggleImage" src="more.png" alt="摺疊/展開" />
-                </button>
-            </div>
-
-            <div class="product_outer">
-                <?php
-                // 使用全局变量中的数据库连接
-                if (isset($GLOBALS['link'])) {
-                    $link = $GLOBALS['link'];
-
-                    $sql = "SELECT product_id, product_name, product_img, product_info, product_price FROM product";
-                    $result = mysqli_query($link, $sql);
-
-                    if (mysqli_num_rows($result) > 0) {
-                        // 输出每行数据
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<div class="product_inner">';
-                            echo '<img src="' . $row["product_img"] . '" alt="product" width="280" height="280">';
-                            echo '<h3>' . $row["product_name"] . '</h3>';
-                            echo '<h5>' . $row["product_info"] . '</h5>';
-                            echo '<p>$ ' . $row["product_price"] . '</p>';
-                            echo '</div>';
-                        }
-                    } else {
-                        echo "0 结果";
-                    }
-                } else {
-                    echo "Database connection not established.";
-                }
-                ?>
-            </div>
-        </div>
-    </div>
-    <!-- 底部 -->
-    <footer class="footer_container">
-        <h2>蔣家小館</h2>
+    <!-- 內容 -->
+    
+   <!-- 底部 -->
+   <footer class="footer_container">
+          <h2>蔣家小館</h2>
         <div class="footer_class">
             <div class="footer_content">
                 <h5>TEL：0932149239</h5>
@@ -411,18 +368,19 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
             </div>
             <div class="footer_content">
                 <h5>課程</h5>
-                <a href="#" class="footer_href">實體課程</a>
-                <a href="#" class="footer_href">線上課程</a>
-                <a href="#" class="footer_href">蔣氏食譜</a>
+                <a href="../shop/1_mclass.php" class="footer_href">所有課程</a>
+                <a href="../shop/1_class.php" class="footer_href">實體班</a>
+                <a href="../shop/1_eclass.php" class="footer_href">線上課</a>
+                <a href="../shop/1_rclass.php" class="footer_href">蔣氏食譜</a>
             </div>
             <div class="footer_content">
                 <h5>產品</h5>
-                <a href="#" class="footer_href">蔣氏自製</a>
-                <a href="#" class="footer_href">私房好物</a>
-                <a href="#" class="footer_href">其他推薦</a>
+                <a href="../shop/1_product.php" class="footer_href">蔣氏自製</a>
+                <a href="../shop/1_other.php" class="footer_href">私房好物</a>
+                <h5>會員</h5>
+                <a href="../shop/1_menber.php" class="footer_href">會員專區</a>
             </div>
         </div>
-
         <h5 class="copyright">Copyright © 2023 RW017.</h5>
 
     </footer>
