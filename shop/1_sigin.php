@@ -1,45 +1,58 @@
 <?php
 // Include config file
-require_once "./admin/2_config.php";
-$conn = $GLOBALS['link'];
-// Define variables and initialize with empty value
-$u_username = isset($_POST["u_username"]) ? $_POST["u_username"] : '';
-$u_password = isset($_POST["u_password"]) ? $_POST["u_password"] : '';
+session_start();
 
 // Processing form data when form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Change SQL to fit your database
-    $sql = "SELECT * FROM user WHERE user_account = '$u_username' AND user_password = '$u_password'";
-    $result = mysqli_query($conn, $sql);
-
-    if (mysqli_num_rows($result) == 1) {
-        $row = mysqli_fetch_assoc($result);
-
-        // Start a new session
-        session_start();
-        
-        // Store data in session variables
-        $_SESSION["loggedin"] = true;
-        $_SESSION["u_id"] = $row["user_id"];
-        $_SESSION["u_username"] = $row["user_account"];
-      
-        
-        // Redirect based on rank
-       
-            header("location: 1_menber.php"); // Change to the appropriate engineer page
+if (isset($_POST["submit"]) && $_POST["submit"] == "登入") {
     
-        
-        exit; 
+    $uname = $_POST["u_username"];
+    $upassword = $_POST["u_password"];
+    
+    //$sql = "SELECT * FROM user WHERE user_account = '$u_username' AND user_password = '$u_password'";
+    if ($uname == "" || $upassword == "") {
+        echo "<script>alert('請輸入完整資料！'); history.go(-1);</script>";
     } else {
-        // Display an error message if username or password is incorrect
-        function_alert("帳號或密碼錯誤");
+        // 數據庫參數
+        $servername = "localhost";
+        $username = "chiangyum";
+        $password = "admin";
+        $dbname = "chiangyum";
+        // 建立連線
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // 檢測連線
+        if ($conn->connect_error) {
+            die("連線失敗: " . $conn->connect_error);
+        }
+        // 使用預備語句來防止SQL注入
+        $sql = "SELECT * FROM user WHERE user_account = '$uname' AND user_password = '$upassword'";
+        //執行SQL語句
+        $result = $conn->query($sql);
+        //統計執行結果影響的行數
+        $num = $result->num_rows;
+
+        //如果已經存在該使用者
+        if ($num) {
+
+            $row = mysqli_fetch_array($result);
+            $sql = "SELECT user_name FROM user WHERE user_account = '$uname'";
+            $result = $conn ->query($sql);
+            $row = $result ->fetch_assoc();
+            $user_name = $row["user_name"];
+            $_SESSION['user_name'] = $user_name;
+            $_SESSION["loggedin"]= true ;
+           
+                echo '<script>window.location.href="../shop/1_menber.php"</script>';
+    
+        } else {
+            echo "<script>alert('資訊不正確！ $name $upassword ');history.go(-1);</script>";
+        }
     }
 }
-// Close connection
-mysqli_close($conn);
-
+else {
+    echo "<script>alert('提交未成功！'); history.go(-1);</script>";
+}
 function function_alert($message) {
-   echo "<script>alert('$message'); window.location.href='1_menber.php';</script>";
+   echo "<script>alert('$message'); window.location.href='../shop/1_menber.php';</script>";
     return false;
 }
 ?>

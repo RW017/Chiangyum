@@ -209,7 +209,7 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
         <?php if (!isset($_SESSION["loggedin"])) : ?>
             <div class="unknow ">
                 <p>會員專區</p>
-                <form method="post" action="1_sigin.php">
+                <form method="post" action="../shop/1_sigin.php">
                     帳號：<input type="text" name="u_username"><br /><br />
                     密碼：<input type="password" name="u_password"><br><br>
                     <input type="submit" value="登入" name="submit"><br><br>
@@ -218,8 +218,11 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
         <?php endif; ?>
 
         <?php if (isset($_SESSION["loggedin"])) : ?>
-            <div class="know  ">
+            <div class="know">
                 <p>MEOW</p>
+                <?php
+                echo "你好  " .  $_SESSION['user_name'] . "";
+                ?>
                 <form method="post" action="1_logout.php">
                     <input type="submit" value="登出" name="logout">
                 </form>
