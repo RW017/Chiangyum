@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <?php
-// Initialize the session
 session_start();
-include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这个文件里
+include('..\SQL\config.php');  
 ?>
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -57,7 +55,6 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
             align-items: center;
             line-height: normal;
             width: calc(50% - 5px);
-            /* 回復這一行，讓大螢幕上每行兩個 */
             flex-shrink: 0;
             flex-grow: 0;
             /* padding: 30px; */
@@ -91,7 +88,6 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
             line-height: normal;
             padding: 15px;
             aspect-ratio: 1/1;
-            /* 這會使高度與寬度相等，形成正方形 */
             flex-basis: calc(20% - 5px);
             /* 一排五個 */
         }
@@ -100,7 +96,6 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
             max-width: 100%;
             max-height: 100%;
             object-fit: cover;
-            /* 使圖片覆蓋整個區域，可能會裁切 */
         }
 
         @media (max-width: 1200px) {
@@ -141,7 +136,6 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
             
             display: flex;
             justify-content: space-between;
-            /*或者用其他的排列方式，根據你的需求*/
             width: 100%;
         }
 
@@ -173,13 +167,9 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
             color: #4e4545;
             font-size: 15px;
             font-weight: bold;
-            /* 設置文字顏色 */
             text-decoration: none;
-            /* 取消底線 */
             padding: 20px;
-            /* 添加內間距以分隔文字 */
             display: inline-block;
-            /* 將a元素設為inline-block以支援間距 */
         }
 
         /* 當滑鼠懸停在列表項目上時 */
@@ -237,14 +227,11 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
 
         .title_area_left p {
             margin-top: 0;
-            /* 清除上邊距 */
             margin-bottom: 5px;
-            /* 這裡設定的是 5px，但你可以根據需要進行調整 */
         }
 
         .title_area_left p:last-child {
             margin-top: 5px;
-            /* 這裡設定的是 5px，但你可以根據需要進行調整 */
         }
 
         /*內容區域 */
@@ -324,7 +311,6 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
                         <li> <a href="../shop/1_menber.php">會員專區</a></li>
 
                         <?php if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) : ?>
-                            <!-- 只有在用户登录时才显示购物车图标 -->
                             <li><a href="1_cart.html">
                             <img src="../material/icon/shopping-cart.png" alt="Shopping Cart" style="width: 15px; height: auto;">
                                 </a></li>
@@ -355,22 +341,11 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
    
             <div class="product_outer">
             <?php
-                // 使用全局變數中的資料庫連接 
                 if (isset($GLOBALS['conn'])) {
                     $conn = $GLOBALS['conn'];
 
                     // SQL 查詢語句
                     $sql = "SELECT other_product_id, other_product_name, other_product_img, other_product_info, other_product_content,other_product_link FROM other_product";
-                    // 檢查是否有 GET 參數，並相應地修改 SQL 查詢
-                    if (isset($_GET['filter'])) {
-                        $filter = $_GET['filter'];
-                        if ($filter === "all") {
-                            // 不做任何改變，顯示所有產品
-                        } elseif (is_numeric($filter)) {
-                            $sql .= " WHERE product_product_type_id = $filter";
-                        }
-                    }
-
 
                     // 執行SQL查詢
                     $result = $conn->query($sql);

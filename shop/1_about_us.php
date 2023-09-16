@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <?php
-// Initialize the session
 session_start();
-include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这个文件里
+include('..\SQL\config.php'); 
 ?>
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -51,7 +49,6 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
             align-items: center;
             line-height: normal;
             width: calc(50% - 5px);
-            /* 回復這一行，讓大螢幕上每行兩個 */
             flex-shrink: 0;
             flex-grow: 0;
            /* padding: 30px; */
@@ -94,14 +91,11 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
 
         .title_area_left p {
             margin-top: 0;
-            /* 清除上邊距 */
             margin-bottom: 5px;
-            /* 這裡設定的是 5px，但你可以根據需要進行調整 */
         }
 
         .title_area_left p:last-child {
             margin-top: 5px;
-            /* 這裡設定的是 5px，但你可以根據需要進行調整 */
         }
 
         /*內容區域 */
@@ -178,7 +172,6 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
                         <li> <a href="../shop/1_menber.php">會員專區</a></li>
 
                         <?php if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) : ?>
-                            <!-- 只有在用户登录时才显示购物车图标 -->
                             <li><a href="1_cart.html">
                             <img src="../material/icon/shopping-cart.png" alt="Shopping Cart" style="width: 15px; height: auto;">
                                 </a></li>
@@ -204,7 +197,6 @@ include('..\SQL\config.php');  // 假设你的数据库连接代码保存在这�
                
         <div class="inner">
             <div class="title_area_right">
-                <!-- 注意這裡移除了 inline 的 style -->
                 <img src="..\material\about_us\about_us.jpg" alt="about_us">
             </div>
         </div>

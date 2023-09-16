@@ -1,8 +1,6 @@
 <?php
-// Include config file
 session_start();
 
-// Processing form data when form is submitted
 if (isset($_POST["submit"]) && $_POST["submit"] == "登入") {
     
     $uname = $_POST["u_username"];
@@ -23,7 +21,7 @@ if (isset($_POST["submit"]) && $_POST["submit"] == "登入") {
         if ($conn->connect_error) {
             die("連線失敗: " . $conn->connect_error);
         }
-        // 使用預備語句來防止SQL注入
+
         $sql = "SELECT * FROM user WHERE user_account = '$uname' AND user_password = '$upassword'";
         //執行SQL語句
         $result = $conn->query($sql);
