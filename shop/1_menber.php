@@ -176,6 +176,7 @@ include('..\SQL\config.php');
                         <span></span>
                     </a>
                     <ul class="menu-left">
+                    <li><a href="../shop/1_about_us.php">關於我們</a></li>
                         <li><a href="../shop/1_class.php">查看課程</a></li>
                         <li> <a href="../shop/1_product.php">購買產品</a></li>
                         <li> <a href="../shop/1_other.php">好物推薦</a></li>

@@ -159,13 +159,14 @@ include('..\SQL\config.php');
         <div class="nav">
             <div class="containerr">
                 <nav id="navigation">
-                <a href="../shop/1_about_us.php" class="logo">蔣家小館</a>
+                <a class="logo">蔣家小館</a>
                     <a aria-label="mobile menu" class="nav-toggle">
                         <span></span>
                         <span></span>
                         <span></span>
                     </a>
                     <ul class="menu-left">
+                    <li><a href="../shop/1_about_us.php">關於我們</a></li>
                         <li><a href="../shop/1_class.php">查看課程</a></li>
                         <li> <a href="../shop/1_product.php">購買產品</a></li>
                         <li> <a href="../shop/1_other.php">好物推薦</a></li>

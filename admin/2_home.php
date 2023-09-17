@@ -89,7 +89,7 @@
         //連線資料庫並讀取資料表
         $servername = "localhost";
         $username = "chiangyum";
-        $password = "admin";
+        $password = "==Admin123==";
         $dbname = "chiangyum";
 
         // 建立連線

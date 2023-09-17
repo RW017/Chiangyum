@@ -195,7 +195,14 @@ include('..\SQL\config.php');
             }
         }
 
-
+        .product-link {
+    text-decoration: none;
+    color: inherit;
+}
+        /* 當滑鼠懸停在列表項目上時 */
+        .product-link:hover {
+    text-decoration: underline; /* 添加底线 */
+}
         /*標題區域 */
 
 
@@ -310,6 +317,7 @@ include('..\SQL\config.php');
                         <span></span>
                     </a>
                     <ul class="menu-left">
+                    <li><a href="../shop/1_about_us.php">關於我們</a></li>
                         <li><a href="../shop/1_class.php">查看課程</a></li>
                         <li> <a href="../shop/1_product.php">購買產品</a></li>
                         <li> <a href="../shop/1_other.php">好物推薦</a></li>
@@ -386,7 +394,7 @@ include('..\SQL\config.php');
                         while ($row = $result->fetch_assoc()) {
                             echo '<div class="product_inner">';
                             echo '<img src="' . $row["product_img"] . '" alt="product" width="280" height="280">';
-                            echo '<h3>' . $row["product_name"] . '</h3>';
+                            echo '<h3><a href="1_product_detail.php?id=' . $row["product_id"] . '" class="product-link">' . $row["product_name"] . '</a></h3>';
                             echo '<h5>' . $row["product_info"] . '</h5>';
                             echo '<p>$ ' . $row["product_price"] . '</p>';
                             echo '</div>';

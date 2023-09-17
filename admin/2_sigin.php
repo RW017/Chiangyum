@@ -19,7 +19,7 @@ if (isset($_POST["submit"]) && $_POST["submit"] == "登入") {
         // 數據庫參數
         $servername = "localhost";
         $username = "chiangyum";
-        $password = "admin";
+        $password = "==Admin123==";
         $dbname = "chiangyum";
         // 建立連線
         $conn = new mysqli($servername, $username, $password, $dbname);

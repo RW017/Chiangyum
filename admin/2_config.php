@@ -7,7 +7,7 @@ if(!isset($_SESSION)) {
 
 $servername = "localhost";
 $username = "chiangyum";
-$password = "admin";
+$password = "==Admin123==";
 $dbname = "chiangyum";
 
 // 建立連線
