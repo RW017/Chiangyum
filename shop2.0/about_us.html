@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>您好的網頁</title>
 
-    <link rel="stylesheet" href="..\font\word.css">
+    <link rel="stylesheet" href="font.css">
     <link rel="stylesheet" href="body.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
@@ -19,7 +19,40 @@
 </head>
 
 <body>
-    <h1>您好</h1>
+    <!-- navbar start-->
+    <!-- 導覽列-->
+    <div class="navbox">
+        
+        <div class="nav">
+            <div class="discount">
+                <p>全館滿3000免運費</p></div>
+            <div class="containerr">
+                <nav id="navigation">
+                    <a href="#" class="logo">
+                        <img style="height:40px;width: auto;" src="material\logo_top.png" alt="蔣家小館">
+                        <img style="height:40px;width: auto;" src="material\logo_top2.png" alt="蔣家小館">
+
+                    </a>                    
+                    <a aria-label="mobile menu" class="nav-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                    <ul class="menu-left">
+                    <li><a href="#">關於我們</a></li>
+                        <li><a href="#">查看課程</a></li>
+                        <li> <a href="#">購買產品</a></li>
+                        <li> <a href="#">好物推薦</a></li>
+                        <li> <a href="#">會員專區</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    <!-- navbar end -->
+    <h1>內容</h1>
     <!-- footer start-->
     <footer>
         <hr>
@@ -46,11 +79,16 @@
         </div>
         <!-- footer 版權-->
         <div class="copyright_footer">
-            <h5>Copyright © 2023 RW017.</h5>
+            <h5>Copyright © 2023 StellarScript.</h5>
         </div>
 
     </footer>
 <!-- footer end -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+    <script src="./navbar.js"></script>
+    <link rel="stylesheet" href="navbar.js">
+
 </body>
 
 </html>

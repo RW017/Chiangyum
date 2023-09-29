@@ -1,6 +1,12 @@
 body {
-    font-family: 'GenWanMin';
+    font-family: 'FakePearl-Regular';
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    margin: 0;
+    padding: 0;
 }
 h1,
 h2,
