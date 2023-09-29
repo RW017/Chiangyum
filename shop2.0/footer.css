@@ -1,8 +1,13 @@
 footer{
-    padding: 20px;
+    padding: 5rem;
 }
 /*標題*/
+.info_out_footer{
+    display: flex;
+    align-items: center;
+}
 .info_footer{
+    padding-left: 15px;
     padding-top: 15px;
     padding-bottom: 15px;
 }
