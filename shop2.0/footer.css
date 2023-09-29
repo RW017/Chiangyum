@@ -1,6 +1,7 @@
 footer{
     padding: 20px;
 }
+/*標題*/
 .info_footer{
     padding-top: 15px;
     padding-bottom: 15px;
@@ -13,20 +14,12 @@ footer{
     margin-top: 5px; 
     margin-bottom: 5px;
  }
+ /*網頁總連結*/
  .content_footer{
     padding-top: 15px;
     padding-bottom: 15px;
 }
- .contact_footer{
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-.contact_footer h5{
-    margin-top: 5px; 
-    margin-bottom: 5px;
- }
-
-footer a {
+.content_footer a {
     font-weight: bold;
     color: #4e4545;
     text-decoration: none;
@@ -35,7 +28,7 @@ footer a {
     position: relative; /* 為了後續的偽元素定位 */
 }
 
-footer a::before {
+.content_footer a::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -46,6 +39,15 @@ footer a::before {
     transition: width 0.3s; /* 平滑的過渡效果 */
 }
 
-footer a:hover::before {
+.content_footer a:hover::before {
     width: 100%; /* 當滑鼠懸停時填滿整個連結的寬度 */
 }
+/*聯繫*/
+ .contact_footer{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.contact_footer h5{
+    margin-top: 5px; 
+    margin-bottom: 5px;
+ }
