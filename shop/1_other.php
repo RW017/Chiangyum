@@ -37,7 +37,6 @@ include('..\SQL\config.php');
         /*排版*/
         .outer {
             /* border: 1px solid black; */
-            border: 1px solid black;
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
@@ -48,7 +47,6 @@ include('..\SQL\config.php');
 
         .inner {
             /* border: 1px solid black; */
-            border: 1px solid black;
             box-sizing: border-box;
             display: flex;
             justify-content: center;
@@ -83,8 +81,8 @@ include('..\SQL\config.php');
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            /*justify-content: center;*/
+            /*align-items: center;*/
             line-height: normal;
             padding: 15px;
             aspect-ratio: 1/1;
@@ -339,7 +337,8 @@ include('..\SQL\config.php');
             </div>
         </div>
     </div>
-   
+   <div class="inner">
+   </div>
             <div class="product_outer">
             <?php
                 if (isset($GLOBALS['conn'])) {
@@ -354,14 +353,16 @@ include('..\SQL\config.php');
                     if ($result->num_rows > 0) {
                         // 輸出每行數據
                         while ($row = $result->fetch_assoc()) {
-                            echo '<div class="product_inner">';
+                            echo '<div class = inner>';
                             echo '<img src="' . $row["other_product_img"] . '" alt="product" width="300" height="280">';
+                            echo '<div class="product_inner">';
                             echo '<h3>' . $row["other_product_name"] . '</h3>';
                             echo '<h5>' . $row["other_product_info"] . '</h5>';
                             echo '<h5>' . $row["other_product_content"] . '</h5>';
                             echo '<a href="' . $row["other_product_link"] . '"><img src="../material/icon/link.png" alt="link" style="width: 30px; height: auto;"></a>';
                             
 
+                            echo '</div>';
                             echo '</div>';
                         }
                     } else {
