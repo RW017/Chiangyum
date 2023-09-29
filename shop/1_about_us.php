@@ -33,6 +33,7 @@ include('..\SQL\config.php');
 
         /*排版*/
         .outer {
+            /* border: 1px solid black; */
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
