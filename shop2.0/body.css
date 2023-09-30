@@ -4,10 +4,12 @@ body {
     margin: 0;
     padding: 0;
 }
-html{
+
+html {
     margin: 0;
     padding: 0;
 }
+
 h1,
 h2,
 h3,
@@ -15,7 +17,7 @@ h4,
 h5,
 h6,
 p {
-    
+
     color: #4e4545;
 }
 
@@ -25,19 +27,53 @@ p {
     flex-wrap: wrap;
     /*   padding: 2.5rem;*/
     padding: 10%;
-   max-width: 80%;
+    max-width: 80%;
     margin: 0 auto;
     box-sizing: border-box;
 }
-.outer > div {
-    
+
+.outer>div {
+
     padding-top: 50px;
     display: flex;
-    flex-direction: column;  
-    flex-basis: 50%;  
-    max-width: 100%; 
-    min-width: 300px; 
+    flex-direction: column;
+    flex-basis: 50%;
+    max-width: 100%;
+    min-width: 300px;
     /*border: 1px solid rgb(255, 0, 0);*/
     flex-grow: 1;
     flex-shrink: 1;
+}
+
+.outer_one {
+    border: 1px solid rgb(255, 0, 0);
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 80%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    align-items: flex-start;
+    /* 添加这行 */
+}
+
+.outer_one>div {
+    border: 1px solid rgb(76, 0, 255);
+    display: flex;
+    flex-direction: column;
+    /* 这里保持 column 不变 */
+    flex-basis: 100%;
+    /* 设置为100% */
+    max-width: none;
+    /* 设置为 none */
+    min-width: 0;
+    /* 设置为0 */
+    flex-grow: 0;
+    /* 设置为0 */
+    flex-shrink: 0;
+    /* 设置为0 */
+    margin-right: 10px;
+    /* 根据需要添加 */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>關於我們</title>
+    <title>課程</title>
     <link rel="stylesheet" href="font.css">
     <link rel="stylesheet" href="body.css">
     <link rel="stylesheet" href="navbar.css">
@@ -13,29 +13,6 @@
     <link rel="stylesheet" href="btn.css">
 
     <style>
-        
-
-        .intro {
-            /*border: 1px solid rgb(170, 255, 0);*/
-            padding-top: 50px;
-            font-size: larger;
-            width: 80%;
-            position: relative;
-        }
-
-        .intro img {
-
-            position: absolute;
-            bottom: 0;
-            left: 10%;
-            opacity: 0.6;
-            z-index: -1;
-        }
-
-        .intro p {
-            font-size: 24px;
-        }
-
         .img-title {
             position: relative;
             width: 100%;
@@ -54,7 +31,6 @@
         }
 
         .title {
-            /*border: 1px solid rgb(234, 0, 255);*/
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -62,67 +38,79 @@
             padding-bottom: 50px;
         }
 
+
+
+
         .title h1,
         h3 {
             margin-top: 5px;
             margin-bottom: 5px;
         }
 
-        .product {
-            padding-top: 15px;
-            padding-bottom: 15px;
+        .pick {
             width: 100%;
             display: flex;
-            justify-content: center;
-        }
-
-        .info_product {
-            padding-right: 30px;
-            width: 70%;
-            display: flex;
             flex-direction: column;
-            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
-        .link_product {
-            width: 25%;
+        .pick_btn {
             display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
+            justify-content: center;
+            /* 使按钮水平居中排列 */
+            /* 增加按鈕之间的间距 */
+            gap: 20px;
         }
-
-
-        .img_product {
-            width: 100%;
-            height: 0;
-            padding-top: 100%;
-            position: relative;
-        }
-
-        .img_product img {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .pick_btn .button-48 {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-        }
-
-        .btn_product .button-48 {
-            width: 100%;
-            height: 5%;
-            font-size: 12px;
+            font-size: 28px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
-        .product h3,
-        h2,
-        p {
-            margin-top: 5px;
-            margin-bottom: 5px;
+        .slider {
+            width: 100%;
+            /* 或其他你喜欢的宽度 */
+            overflow-x: auto;
+            display: flex;
+            /* 这样子元素就会成为flex items */
         }
+
+
+        .detail_person {
+            margin: 10PX;
+            background-color: aqua;
+            width: 350px;
+        }
+
+        .img_person {
+            width: 350px;
+            /* Setting width of img_person to 100px */
+            overflow: hidden;
+            /* Preventing the image from overflowing its container */
+            flex: none;
+            /* Ensuring the width doesn't grow or shrink from 100px */
+        }
+
+        .img_person img {
+            width: 100%;
+            /* Making the image take up the full width of its parent */
+            height: 100%;
+            /* Setting image height to be equal to its parent */
+            object-fit: cover;
+            /* Making sure the image always covers its parent fully */
+        }
+
+        .info_person {
+            flex: 1;
+            /* Making info_person take up the remaining width */
+            padding: 10px;
+            /* Adding some padding inside the info box */
+        }
+
+
 
         .more {
             padding: 15px;
@@ -183,100 +171,89 @@
     <div class="outer">
         <!-- 標題-->
         <div class="title">
-            <h1>關於我們</h1>
-            <h3>-蔣夫人的核心理念</h3>
+            <h1>課程</h1>
+            <h3>-蔣夫人的私房教室</h3>
         </div>
         <!-- 標題圖-->
         <div class="img-title">
             <img src="material\about_us\title_about_us.jpg" alt="about_us">
         </div>
-        <!-- 介紹詞-->
-        <div class="intro">
-            <h1>核心理念</h1>
-            <p> 源自於對家人的那份深沉關懷，<br>
-                想讓最親近的人吃得健康，<br>
-                享受到真正的食物原味。<br>
-                <br>
-                當遇見了稻米鞠的那剎，<br>
-                這份熱情轉化為使命。<br>
-                <br>
-                從此，<br>
-                蔣家小館不只是一個名字，<br>
-                更是代表著推廣健康飲食的理念。<br>
-                <br>
-                除此之外，
-                <br>
-                蔣夫人也致力尋找生活好物，<br>
-                及每月全台巡迴課程，<br>
-                讓大家也能看見食材的真正價值。<br>
-                <br><br>
-                希望能夠啟發更多人，<br>
-                一同追尋健康、美味與學習的旅程，<br>
-                就是蔣家小館的核心理念。
-            </p>
-            <img style="height:auto;width: 80%;object-fit: cover;" src="material\about_us\rice.png" alt="rice">
-        </div>
-        <!-- 主打商品-->
-        <div>
-            <div class="product">
-                <div class="info_product">
-                    <h2>鹽麴</h2>
-                    <h3>天然鮮味在味蕾中釋放。</h3>
-                    <p>帶出食物的深層滋味，帶出食物的深層滋味，健康的鮮美選擇。天然發酵的鹽麴，帶出食物的深層滋味，健康的鮮美選擇。</p>
-                </div>
-                <div class="link_product">
-                    <div class="img_product">
-                        <img src="material\about_us\product(1).jpg" alt="about_us">
-                    </div>
-                    <div class="btn_product">
-                        <button class="button-48" role="button"><span class="text">點我前往</span></button>
-                    </div>
-                </div>
-            </div>
-            <div class="product">
-                <div class="info_product">
-                    <h2>味增</h2>
-                    <h3>每日一碗，溫暖心靈。</h3>
-                    <p>帶出食物的深層滋味，帶出食物的深層滋味，健康的鮮美選擇。天然發酵的鹽麴，帶出食物的深層滋味，健康的鮮美選擇。</p>
-                </div>
-                <div class="link_product">
-                    <div class="img_product">
-                        <img src="material\about_us\product(1).jpg" alt="about_us">
-                    </div>
-                    <div class="btn_product">
-                        <button class="button-48" role="button"><span class="text">點我前往</span></button>
-                    </div>
-                </div>
-            </div>
+    </div>
 
-            <div class="product">
-                <div class="info_product">
-                    <h2>纖穀釀</h2>
-                    <h3>天然鮮味在味蕾中釋放。</h3>
-                    <p>帶出食物的深層滋味，帶出食物的深層滋味，健康的鮮美選擇。天然發酵的鹽麴，帶出食物的深層滋味，健康的鮮美選擇。</p>
-                </div>
-                <div class="link_product">
-                    <div class="img_product">
-                        <img src="material\about_us\product(1).jpg" alt="about_us">
-                    </div>
-                    <div class="btn_product">
-                        <button class="button-48" role="button"><span class="text">點我前往</span></button>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- 延伸內容-->
-
-        <div class="more">
-            <div class="title_more">
-                <h2>報名課程</h2>
-                <h5>時間緊迫?場地不便?來逛逛我們商場。提供宅配到家或店到店寄送，提供宅配到家或店到店寄送還有線上課程供你選擇。</h5>
-            </div>
-            <div class="btn_more">
-                <button class="button-48" role="button"><span class="text">點我前往</span></button>
+    <!-- 線上課程or實體課程-->
+    <div class="outer_one">
+        <div class="pick">
+            <h1>選擇適合您的</h1>
+            <div class="pick_btn">
+                <button class="button-48" role="button"><span class="text">實體<BR>課程</span></button>
+                <button class="button-48" role="button"><span class="text">線上<BR>課程</span></button>
             </div>
         </div>
+        <!--實體課程-->
+        <div class="person">
+            <h1>實體課程</h1>
+            <div class="slider">
+                <div class="detail_person">
+                    <div class="img_person">
+                        <img src="material\class\class (1).jpg" alt="about_us">
+                    </div>
+                    <div class="info_person">
+                        <h1>實體課程</h1>
+                    </div>
+                </div>
+                <div class="detail_person">
+                    <div class="img_person">
+                        <img src="material\class\class (1).jpg" alt="about_us">
+                    </div>
+                    <div class="info_person">
+                        <h1>實體課程</h1>
+                    </div>
+                </div>
+                <div class="detail_person">
+                    <div class="img_person">
+                        <img src="material\class\class (1).jpg" alt="about_us">
+                    </div>
+                    <div class="info_person">
+                        <h1>實體課程</h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--線上課程-->
+        <div class="online">
+            <h1>線上課程</h1>
+            <div class="slider">
+                <div class="detail_person">
+                    <div class="img_person">
+                        <img src="material\class\class (1).jpg" alt="about_us">
+                    </div>
+                    <div class="info_person">
+                        <h1>實體課程</h1>
+                    </div>
+                </div>
+                <div class="detail_person">
+                    <div class="img_person">
+                        <img src="material\class\class (1).jpg" alt="about_us">
+                    </div>
+                    <div class="info_person">
+                        <h1>實體課程</h1>
+                    </div>
+                </div>
+                <div class="detail_person">
+                    <div class="img_person">
+                        <img src="material\class\class (1).jpg" alt="about_us">
+                    </div>
+                    <div class="info_person">
+                        <h1>實體課程</h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--賣產品-->
+    <div class="outer">
         <div class="more">
             <div class="title_more">
                 <h2>逛逛商品</h2>
@@ -286,7 +263,6 @@
                 <button class="button-48" role="button"><span class="text">點我前往</span></button>
             </div>
         </div>
-
     </div>
     <!-- outer end -->
 
