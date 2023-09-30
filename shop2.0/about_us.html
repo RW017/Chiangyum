@@ -12,8 +12,20 @@
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
     <style>
+        .intro {
+            font-size: larger;
+            width: 50%;
+        }
 
+        .title {
+            border: 1px solid rgb(234, 0, 255);
+            justify-content: center;
+        }
 
+        .title h1,h3{
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
 
     </style>
 </head>
@@ -22,24 +34,25 @@
     <!-- navbar start-->
     <!-- 導覽列-->
     <div class="navbox">
-        
+
         <div class="nav">
             <div class="discount">
-                <p>全館滿3000免運費</p></div>
+                <p>全館滿3000免運費</p>
+            </div>
             <div class="containerr">
                 <nav id="navigation">
                     <a href="#" class="logo">
                         <img style="height:40px;width: auto;" src="material\logo_top.png" alt="蔣家小館">
                         <img style="height:40px;width: auto;" src="material\logo_top2.png" alt="蔣家小館">
 
-                    </a>                    
+                    </a>
                     <a aria-label="mobile menu" class="nav-toggle">
                         <span></span>
                         <span></span>
                         <span></span>
                     </a>
                     <ul class="menu-left">
-                    <li><a href="#">關於我們</a></li>
+                        <li><a href="#">關於我們</a></li>
                         <li><a href="#">查看課程</a></li>
                         <li> <a href="#">購買產品</a></li>
                         <li> <a href="#">好物推薦</a></li>
@@ -50,25 +63,69 @@
         </div>
     </div>
     </div>
-    
+
     <!-- navbar end -->
-    <h1>內容</h1>
+
+    <!-- outer start-->
+    <div class="outer">
+        <!-- 標題-->
+        <div>
+            <div class="title">
+                <h1>關於我們</h1>
+                <h3>-蔣夫人的核心理念</h3>
+            </div>
+        </div>
+        <!-- 標題圖-->
+        <div>
+            <img style="height:auto;width: 100%;object-fit: cover;" src="material\about_us\title_about_us.jpg"
+                alt="about_us">
+        </div>
+        <!-- 介紹詞-->
+        <div class="intro">
+            <p>蔣家小館的初衷，<br>
+                是源自於對家人的那份深沉關懷，<br>
+                想讓最親近的人吃得健康，<br>
+                享受到真正的食物原味。<br>
+                <br>
+                當遇見了稻米鞠的那剎，<br>
+                這份熱情轉化為使命。<br>
+                <br>
+                從此，<br>
+                蔣家小館不只是一個名字，<br>
+                更是代表著推廣健康飲食的理念。<br>
+                <br>
+                除此之外，
+                <br>
+                蔣夫人也致力尋找生活好物，<br>
+                希望提升大家的生活品質，<br>
+                每月全台巡迴課程，<br>
+                讓大家也能學習到食材的真正價值。<br>
+                <br><br>
+                希望能夠啟發更多人，<br>
+                一同追尋健康、美味與學習的旅程，<br>
+                就是蔣家小館的核心理念。
+            </p>
+        </div>
+    </div>
+
+    <!-- outer end -->
+
     <!-- footer start-->
     <footer>
         <hr>
 
         <!-- footer 標題-->
         <div class="info_out_footer">
-        <div>
-        <img style="height:100px;width: auto;" src="material\logo_bot.png" alt="蔣家小館">
-      </div>
-        <div class="info_footer">
-            <h1>蔣家小館</h1>
-            <h6>產品已投保富邦產品責任險
-                <br>食品業者登錄字號:T-200151309-00000-7
-            </h6>
+            <div>
+                <img style="height:100px;width: auto;" src="material\logo_bot.png" alt="蔣家小館">
+            </div>
+            <div class="info_footer">
+                <h1>蔣家小館</h1>
+                <h6>產品已投保富邦產品責任險
+                    <br>食品業者登錄字號:T-200151309-00000-7
+                </h6>
+            </div>
         </div>
-    </div>
         <!-- footer 網頁總連結-->
         <div class="content_footer">
             <a href="#" class="footer_href">課程</a> |
@@ -89,8 +146,8 @@
         </div>
 
     </footer>
-<!-- footer end -->
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <!-- footer end -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
     <script src="./navbar.js"></script>
     <link rel="stylesheet" href="navbar.js">
