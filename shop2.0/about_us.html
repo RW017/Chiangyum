@@ -5,28 +5,134 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>您好的網頁</title>
-
+    <title>關於我們</title>
     <link rel="stylesheet" href="font.css">
     <link rel="stylesheet" href="body.css">
     <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="btn.css">
+
     <style>
         .intro {
+            /*border: 1px solid rgb(170, 255, 0);*/
+            padding-top: 50px;
             font-size: larger;
-            width: 50%;
+            width: 80%;
+            position: relative;
+        }
+
+        .intro img {
+            position: absolute;
+            bottom: 0;
+            left: 10%;
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+        .img-title {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .img-title img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .title {
-            border: 1px solid rgb(234, 0, 255);
+            /*border: 1px solid rgb(234, 0, 255);*/
+            display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
+
         }
 
-        .title h1,h3{
+        .title h1,
+        h3 {
             margin-top: 5px;
             margin-bottom: 5px;
         }
 
+        .product {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .info_product {
+            padding-right: 30px;
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .link_product {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+
+        .img_product {
+            width: 100%;
+            height: 0;
+            padding-top: 100%;
+            position: relative;
+        }
+
+        .img_product img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .btn_product .button-48 {
+            width: 100%;
+            height: 5%;
+            font-size: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product h3,
+        h2,
+        p {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .more {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-grow: 1;
+        }
+
+        .btn_more {
+            width: 100%;
+            margin-right: 0;
+            padding-top: 15px;
+            justify-content: flex-end;
+            display: flex;
+        }
     </style>
 </head>
 
@@ -69,21 +175,18 @@
     <!-- outer start-->
     <div class="outer">
         <!-- 標題-->
-        <div>
-            <div class="title">
-                <h1>關於我們</h1>
-                <h3>-蔣夫人的核心理念</h3>
-            </div>
+        <div class="title">
+            <h1>關於我們</h1>
+            <h3>-蔣夫人的核心理念</h3>
         </div>
         <!-- 標題圖-->
-        <div>
-            <img style="height:auto;width: 100%;object-fit: cover;" src="material\about_us\title_about_us.jpg"
-                alt="about_us">
+        <div class="img-title">
+            <img src="material\about_us\title_about_us.jpg" alt="about_us">
         </div>
         <!-- 介紹詞-->
         <div class="intro">
-            <p>蔣家小館的初衷，<br>
-                是源自於對家人的那份深沉關懷，<br>
+            <h1>核心理念</h1>
+            <p> 源自於對家人的那份深沉關懷，<br>
                 想讓最親近的人吃得健康，<br>
                 享受到真正的食物原味。<br>
                 <br>
@@ -97,17 +200,87 @@
                 除此之外，
                 <br>
                 蔣夫人也致力尋找生活好物，<br>
-                希望提升大家的生活品質，<br>
-                每月全台巡迴課程，<br>
-                讓大家也能學習到食材的真正價值。<br>
+                及每月全台巡迴課程，<br>
+                讓大家也能看見食材的真正價值。<br>
                 <br><br>
                 希望能夠啟發更多人，<br>
                 一同追尋健康、美味與學習的旅程，<br>
                 就是蔣家小館的核心理念。
             </p>
+            <img style="height:auto;width: 80%;object-fit: cover;" src="material\about_us\rice.png" alt="rice">
         </div>
-    </div>
+        <!-- 主打商品-->
+        <div>
+            <div class="product">
+                <div class="info_product">
+                    <h2>鹽麴</h2>
+                    <h3>天然鮮味在味蕾中釋放。</h3>
+                    <p>帶出食物的深層滋味，帶出食物的深層滋味，健康的鮮美選擇。天然發酵的鹽麴，帶出食物的深層滋味，健康的鮮美選擇。</p>
+                </div>
+                <div class="link_product">
+                    <div class="img_product">
+                        <img src="material\about_us\product(1).jpg" alt="about_us">
+                    </div>
+                    <div class="btn_product">
+                        <button class="button-48" role="button"><span class="text">點我前往</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="product">
+                <div class="info_product">
+                    <h2>味增</h2>
+                    <h3>每日一碗，溫暖心靈。</h3>
+                    <p>帶出食物的深層滋味，帶出食物的深層滋味，健康的鮮美選擇。天然發酵的鹽麴，帶出食物的深層滋味，健康的鮮美選擇。</p>
+                </div>
+                <div class="link_product">
+                    <div class="img_product">
+                        <img src="material\about_us\product(1).jpg" alt="about_us">
+                    </div>
+                    <div class="btn_product">
+                        <button class="button-48" role="button"><span class="text">點我前往</span></button>
+                    </div>
+                </div>
+            </div>
 
+            <div class="product">
+                <div class="info_product">
+                    <h2>纖穀釀</h2>
+                    <h3>天然鮮味在味蕾中釋放。</h3>
+                    <p>帶出食物的深層滋味，帶出食物的深層滋味，健康的鮮美選擇。天然發酵的鹽麴，帶出食物的深層滋味，健康的鮮美選擇。</p>
+                </div>
+                <div class="link_product">
+                    <div class="img_product">
+                        <img src="material\about_us\product(1).jpg" alt="about_us">
+                    </div>
+                    <div class="btn_product">
+                        <button class="button-48" role="button"><span class="text">點我前往</span></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- 延伸內容-->
+
+        <div class="more">
+            <div class="title_more">
+                <h2>報名課程</h2>
+                <h5>時間緊迫?場地不便?來逛逛我們商場。提供宅配到家或店到店寄送，提供宅配到家或店到店寄送還有線上課程供你選擇。</h5>
+            </div>
+            <div class="btn_more">
+                <button class="button-48" role="button"><span class="text">點我前往</span></button>
+            </div>
+        </div>
+        <div class="more">
+            <div class="title_more">
+                <h2>逛逛商品</h2>
+                <h5>時間緊迫?場地不便?來逛逛我們商場。提供宅配到家或店到店寄送，提供宅配到家或店到店寄送還有線上課程供你選擇。</h5>
+            </div>
+            <div class="btn_more">
+                <button class="button-48" role="button"><span class="text">點我前往</span></button>
+            </div>
+        </div>
+
+    </div>
     <!-- outer end -->
 
     <!-- footer start-->
