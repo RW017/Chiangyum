@@ -58,24 +58,23 @@
         .pick_btn {
             display: flex;
             justify-content: center;
-            /* 使按钮水平居中排列 */
-            /* 增加按鈕之间的间距 */
             gap: 20px;
+
         }
+
         .pick_btn .button-48 {
             width: 100%;
             height: 100%;
-            font-size: 28px;
+            font-size: 45px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+
         .slider {
             width: 100%;
-            /* 或其他你喜欢的宽度 */
             overflow-x: auto;
             display: flex;
-            /* 这样子元素就会成为flex items */
         }
 
 
@@ -87,27 +86,19 @@
 
         .img_person {
             width: 350px;
-            /* Setting width of img_person to 100px */
             overflow: hidden;
-            /* Preventing the image from overflowing its container */
             flex: none;
-            /* Ensuring the width doesn't grow or shrink from 100px */
         }
 
         .img_person img {
             width: 100%;
-            /* Making the image take up the full width of its parent */
             height: 100%;
-            /* Setting image height to be equal to its parent */
             object-fit: cover;
-            /* Making sure the image always covers its parent fully */
         }
 
         .info_person {
             flex: 1;
-            /* Making info_person take up the remaining width */
             padding: 10px;
-            /* Adding some padding inside the info box */
         }
 
 
@@ -127,6 +118,15 @@
             padding-top: 15px;
             justify-content: flex-end;
             display: flex;
+        }
+
+        .person {
+            background-color: aqua;
+            padding-top: 20% ;
+        }
+        .online {
+            background-color: rgb(255, 0, 255);
+            padding-top: 20% ;
         }
     </style>
 </head>
@@ -176,21 +176,26 @@
         </div>
         <!-- 標題圖-->
         <div class="img-title">
-            <img src="material\about_us\title_about_us.jpg" alt="about_us">
+            <img src="material\class\title_class.jpg" alt="about_us">
         </div>
     </div>
 
     <!-- 線上課程or實體課程-->
     <div class="outer_one">
         <div class="pick">
-            <h1>選擇適合您的</h1>
+            <h1>選擇適合您的方式</h1>
+            <h4>我們專業地提供多元化的實體與線上課程，適應各種學習風格與需求。<br>
+                不論您是喜歡在家自學，<br>
+                還是偏好與導師面對面的深入交流，<br>
+                我們都能提供最合適的方案。<br>
+                深受學員好評，讓學習成果倍增，體驗效果非凡。</h4>
             <div class="pick_btn">
-                <button class="button-48" role="button"><span class="text">實體<BR>課程</span></button>
-                <button class="button-48" role="button"><span class="text">線上<BR>課程</span></button>
+                <a href="#to_person" class="button-48" role="button"><span class="text">實體<BR>課程</span></a>
+                <a href="#to_online" class="button-48" role="button"><span class="text">線上<BR>課程</span></a>
             </div>
         </div>
         <!--實體課程-->
-        <div class="person">
+        <div class="person" id="to_person">
             <h1>實體課程</h1>
             <div class="slider">
                 <div class="detail_person">
@@ -221,7 +226,7 @@
             </div>
         </div>
         <!--線上課程-->
-        <div class="online">
+        <div class="online" id="to_online">
             <h1>線上課程</h1>
             <div class="slider">
                 <div class="detail_person">

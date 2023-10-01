@@ -2,7 +2,11 @@ body {
     font-family: 'FakePearl-Regular';
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding-top: 10%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+   
 }
 
 html {
@@ -22,19 +26,20 @@ p {
 }
 
 .outer {
+    border: 1px solid rgb(0, 255, 38);
     /* border: 1px solid black; */
     display: flex;
     flex-wrap: wrap;
     /*   padding: 2.5rem;*/
-    padding: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
     max-width: 80%;
     margin: 0 auto;
     box-sizing: border-box;
 }
 
 .outer>div {
-
-    padding-top: 50px;
+    border: 1px solid rgb(255, 234, 0);
     display: flex;
     flex-direction: column;
     flex-basis: 50%;
@@ -50,30 +55,22 @@ p {
     display: flex;
     flex-wrap: wrap;
     max-width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
     margin: 0 auto;
     box-sizing: border-box;
     align-items: flex-start;
-    /* 添加这行 */
 }
 
 .outer_one>div {
     border: 1px solid rgb(76, 0, 255);
     display: flex;
     flex-direction: column;
-    /* 这里保持 column 不变 */
     flex-basis: 100%;
-    /* 设置为100% */
     max-width: none;
-    /* 设置为 none */
     min-width: 0;
-    /* 设置为0 */
     flex-grow: 0;
-    /* 设置为0 */
     flex-shrink: 0;
-    /* 设置为0 */
-    margin-right: 10px;
-    /* 根据需要添加 */
-    flex-direction: column;
     align-items: center;
     text-align: center;
 }
