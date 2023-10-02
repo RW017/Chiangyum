@@ -72,35 +72,58 @@
         }
 
         .slider {
+            padding-top: 10%;
+            padding-bottom: 10%;
             width: 100%;
             overflow-x: auto;
+            overflow-y: hidden;
+            /* 隱藏垂直滾動條 */
             display: flex;
+            white-space: nowrap;
+            /* 確保內容不會換行 */
         }
 
+        .slider::-webkit-scrollbar {
+            display: none;
+            /* 隱藏Chrome等瀏覽器的滾動條 */
+        }
 
-        .detail_person {
-            margin: 10PX;
-            background-color: aqua;
+        .detail {
+            margin: 10px;
             width: 350px;
+            cursor: grab;
+            /* 提示用戶可以拖曳滾動 */
+
         }
 
-        .img_person {
+
+        .img {
+            height: 150px;
             width: 350px;
             overflow: hidden;
             flex: none;
         }
 
-        .img_person img {
+        .img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .info_person {
+        .info {
             flex: 1;
-            padding: 10px;
+            padding: 5%;
+            width: 350px;
+            height: 280px;
+            background-color: rgb(255, 196, 60);
+            overflow: hidden;
+            /* 隱藏超出邊界的內容 */
         }
 
+        .info h2 {
+            margin-top: 0px;
+            margin-bottom: 5px;
+        }
 
 
         .more {
@@ -121,12 +144,11 @@
         }
 
         .person {
-            background-color: aqua;
-            padding-top: 20% ;
+            padding-top: 20%;
         }
+
         .online {
-            background-color: rgb(255, 0, 255);
-            padding-top: 20% ;
+            padding-top: 20%;
         }
     </style>
 </head>
@@ -197,68 +219,190 @@
         <!--實體課程-->
         <div class="person" id="to_person">
             <h1>實體課程</h1>
+            <h3>兩年前因疫情關係開了線上課~活鹽麴、甘糀、 纖穀釀製作&延伸料理，為此成立了LINE社群，一直以來很令我感動的是學員們在社群內熱情的分享與交流，至今不變</h3>
             <div class="slider">
-                <div class="detail_person">
-                    <div class="img_person">
+                <div class="detail">
+                    <div class="img">
                         <img src="material\class\class (1).jpg" alt="about_us">
                     </div>
-                    <div class="info_person">
-                        <h1>實體課程</h1>
-                    </div>
-                </div>
-                <div class="detail_person">
-                    <div class="img_person">
-                        <img src="material\class\class (1).jpg" alt="about_us">
-                    </div>
-                    <div class="info_person">
-                        <h1>實體課程</h1>
-                    </div>
-                </div>
-                <div class="detail_person">
-                    <div class="img_person">
-                        <img src="material\class\class (1).jpg" alt="about_us">
-                    </div>
-                    <div class="info_person">
-                        <h1>實體課程</h1>
+                    <div class="info">
+                        <h2>實體課程</h2>
+                        <p>味噌甘糀醬油麴紅燒肉在過年前推出，<br>
+                            大受好評，<br>
+                            紅燒肉簡易養生又入味的手法深得人心，<br>
+                            課程中的燙麵餅皮、味噌甘糀抹醬、<br>
+                            超好吃又助消化的泡菜，<br>
+                            讓學員們樂得在年節中大展身手</p>
+                        <button class="button-48" role="button"><span class="text">點我前往</span></button>
+
                     </div>
                 </div>
 
+                <div class="detail">
+                    <div class="img">
+                        <img src="material\class\class (1).jpg" alt="about_us">
+                    </div>
+                    <div class="info">
+                        <h2>實體課程</h2>
+                        <p>味噌甘糀醬油麴紅燒肉在過年前推出，<br>
+                            大受好評，<br>
+                            紅燒肉簡易養生又入味的手法深得人心，<br>
+                            課程中的燙麵餅皮、味噌甘糀抹醬、<br>
+                            超好吃又助消化的泡菜，<br>
+                            讓學員們樂得在年節中大展身手</p>
+                        <button class="button-48" role="button"><span class="text">點我前往</span></button>
+
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <div class="img">
+                        <img src="material\class\class (1).jpg" alt="about_us">
+                    </div>
+                    <div class="info">
+                        <h2>實體課程</h2>
+                        <p>味噌甘糀醬油麴紅燒肉在過年前推出，<br>
+                            大受好評，<br>
+                            紅燒肉簡易養生又入味的手法深得人心，<br>
+                            課程中的燙麵餅皮、味噌甘糀抹醬、<br>
+                            超好吃又助消化的泡菜，<br>
+                            讓學員們樂得在年節中大展身手</p>
+                        <button class="button-48" role="button"><span class="text">點我前往</span></button>
+
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <div class="img">
+                        <img src="material\class\class (1).jpg" alt="about_us">
+                    </div>
+                    <div class="info">
+                        <h2>實體課程</h2>
+                        <p>味噌甘糀醬油麴紅燒肉在過年前推出，<br>
+                            大受好評，<br>
+                            紅燒肉簡易養生又入味的手法深得人心，<br>
+                            課程中的燙麵餅皮、味噌甘糀抹醬、<br>
+                            超好吃又助消化的泡菜，<br>
+                            讓學員們樂得在年節中大展身手</p>
+                        <button class="button-48" role="button"><span class="text">點我前往</span></button>
+
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <div class="img">
+                        <img src="material\class\class (1).jpg" alt="about_us">
+                    </div>
+                    <div class="info">
+                        <h2>實體課程</h2>
+                        <p>味噌甘糀醬油麴紅燒肉在過年前推出，<br>
+                            大受好評，<br>
+                            紅燒肉簡易養生又入味的手法深得人心，<br>
+                            課程中的燙麵餅皮、味噌甘糀抹醬、<br>
+                            超好吃又助消化的泡菜，<br>
+                            讓學員們樂得在年節中大展身手</p>
+                        <button class="button-48" role="button"><span class="text">點我前往</span></button>
+
+                    </div>
+                </div>
             </div>
+            <h3>找不到喜歡的課程?</h3>
+            <button class="button-48" role="button"><span class="text">點我前往</span></button>
+
         </div>
         <!--線上課程-->
         <div class="online" id="to_online">
             <h1>線上課程</h1>
             <div class="slider">
-                <div class="detail_person">
-                    <div class="img_person">
+
+                <div class="detail">
+                    <div class="img">
                         <img src="material\class\class (1).jpg" alt="about_us">
                     </div>
-                    <div class="info_person">
-                        <h1>實體課程</h1>
-                    </div>
-                </div>
-                <div class="detail_person">
-                    <div class="img_person">
-                        <img src="material\class\class (1).jpg" alt="about_us">
-                    </div>
-                    <div class="info_person">
-                        <h1>實體課程</h1>
-                    </div>
-                </div>
-                <div class="detail_person">
-                    <div class="img_person">
-                        <img src="material\class\class (1).jpg" alt="about_us">
-                    </div>
-                    <div class="info_person">
-                        <h1>實體課程</h1>
+                    <div class="info">
+                        <h2>實體課程</h2>
+                        <p>味噌甘糀醬油麴紅燒肉在過年前推出，<br>
+                            大受好評，<br>
+                            紅燒肉簡易養生又入味的手法深得人心，<br>
+                            課程中的燙麵餅皮、味噌甘糀抹醬、<br>
+                            超好吃又助消化的泡菜，<br>
+                            讓學員們樂得在年節中大展身手</p>
+                        <button class="button-48" role="button"><span class="text">點我前往</span></button>
+
                     </div>
                 </div>
 
+                <div class="detail">
+                    <div class="img">
+                        <img src="material\class\class (1).jpg" alt="about_us">
+                    </div>
+                    <div class="info">
+                        <h2>實體課程</h2>
+                        <p>味噌甘糀醬油麴紅燒肉在過年前推出，<br>
+                            大受好評，<br>
+                            紅燒肉簡易養生又入味的手法深得人心，<br>
+                            課程中的燙麵餅皮、味噌甘糀抹醬、<br>
+                            超好吃又助消化的泡菜，<br>
+                            讓學員們樂得在年節中大展身手</p>
+                        <button class="button-48" role="button"><span class="text">點我前往</span></button>
+
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <div class="img">
+                        <img src="material\class\class (1).jpg" alt="about_us">
+                    </div>
+                    <div class="info">
+                        <h2>實體課程</h2>
+                        <p>味噌甘糀醬油麴紅燒肉在過年前推出，<br>
+                            大受好評，<br>
+                            紅燒肉簡易養生又入味的手法深得人心，<br>
+                            課程中的燙麵餅皮、味噌甘糀抹醬、<br>
+                            超好吃又助消化的泡菜，<br>
+                            讓學員們樂得在年節中大展身手</p>
+                        <button class="button-48" role="button"><span class="text">點我前往</span></button>
+
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <div class="img">
+                        <img src="material\class\class (1).jpg" alt="about_us">
+                    </div>
+                    <div class="info">
+                        <h2>實體課程</h2>
+                        <p>味噌甘糀醬油麴紅燒肉在過年前推出，<br>
+                            大受好評，<br>
+                            紅燒肉簡易養生又入味的手法深得人心，<br>
+                            課程中的燙麵餅皮、味噌甘糀抹醬、<br>
+                            超好吃又助消化的泡菜，<br>
+                            讓學員們樂得在年節中大展身手</p>
+                        <button class="button-48" role="button"><span class="text">點我前往</span></button>
+
+                    </div>
+                </div>
+
+                <div class="detail">
+                    <div class="img">
+                        <img src="material\class\class (1).jpg" alt="about_us">
+                    </div>
+                    <div class="info">
+                        <h2>實體課程</h2>
+                        <p>味噌甘糀醬油麴紅燒肉在過年前推出，<br>
+                            大受好評，<br>
+                            紅燒肉簡易養生又入味的手法深得人心，<br>
+                            課程中的燙麵餅皮、味噌甘糀抹醬、<br>
+                            超好吃又助消化的泡菜，<br>
+                            讓學員們樂得在年節中大展身手</p>
+                        <button class="button-48" role="button"><span class="text">點我前往</span></button>
+
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <!--賣產品-->
-    <div class="outer">
+        <!--賣產品-->
+
         <div class="more">
             <div class="title_more">
                 <h2>逛逛商品</h2>
@@ -312,7 +456,42 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
     <script src="./navbar.js"></script>
     <link rel="stylesheet" href="navbar.js">
-
+    <script>let isDown = false;
+        let startX;
+        let scrollLeft;
+        
+        // 選擇所有的slider元素
+        const sliders = document.querySelectorAll('.slider');
+        
+        // 對每個slider添加事件監聽器
+        sliders.forEach(slider => {
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.style.cursor = 'grabbing';
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+        
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.style.cursor = 'grab';
+            });
+        
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.style.cursor = 'grab';
+            });
+        
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;  // stop the fn from running
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 3;  // scroll-fast
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        });
+        
+    </script>
 </body>
 
 </html>
